@@ -1,0 +1,403 @@
+JavaScript Data Types
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+6:57 PM
+- Variables
+
+- Keywords 
+
+- Declaration 
+
+- Assignment 
+
+- Initialization
+
+- Shadowing 
+
+- Hoisting 
+
+- Closure 
+
+- Global Variable 
+
+
+
+Variable Naming:
+
+   - Name must start with an alphabet or “_” underscore.
+
+   - It can be alpha numeric but can’t start with number. 
+
+   - Special chars are not recommended for production level. 
+
+
+                   var  price; 
+
+                   var  _price;      //  _ is used to mark for internal use. 
+
+                   var  $price;      //  $ is used to make it a variable to hold library. 
+
+                   var  price2;      //  valid 
+
+                   var  2price;     //   invalid 
+
+
+
+   - It can’t be a keyword. 
+
+
+
+                    var class;       // invalid 
+
+                    var for;           // invalid 
+
+
+
+   - Name is recommended to define in camel case. 
+
+   
+
+                     var  userName;
+
+                     
+
+   - Name must speak what it is. 
+
+
+
+                     var btnInsert;
+
+                     var txtName;
+
+                     var product;
+
+                     var products;
+
+   
+
+   - There is no fixed limit for variable name length. But according programming standards 
+
+     for max 64 bit memory you can have upto 65535 chars. 
+
+
+
+   - JavaScript variables are case sensitive. 
+
+
+
+                   var Form;
+
+                   var form;              // both are different variables 
+
+
+
+   - You can configure a keyword for set of variables using “,” delimiter. 
+
+
+
+                   var name, price, stock;
+
+                   name = “TV”;
+
+                   price = 34000;
+
+                   stock = true;
+
+
+
+   - JavaScript is not a strongly typed language. A variable can handle any type of data.
+
+
+
+                   var x = 10;
+
+                   x = “A”;           // valid 
+
+                   x = true;         // valid 
+
+
+
+   - If value is not defined for any variable then it is set as “undefined”.  You can verify by using 
+
+     “undefined” keyword. 
+
+
+
+                    var x, y;        
+
+                    x = 10;             // x = 10,   y = undefined 
+
+
+
+                   if (y==undefined)        // Not Good technique 
+
+                   {
+
+                   }
+
+
+
+                   if(y)                        // good - It returns true if y is defined with a value
+
+                   {
+
+                   }
+
+Ex:
+
+<script>
+
+    "use strict";
+
+     var x, y;
+
+     x = 10;
+
+    
+
+     if(y){
+
+        document.write("X=" + x + "<br>Y=" + y);
+
+     }
+
+     else {
+
+        document.write("X=" + x );
+
+     }
+
+     
+
+</script>
+
+
+
+       - JavaScript ES6+ version supports variable de-structure. You can configure a collection
+
+         of variables with a collection of values. 
+
+
+
+                   var [x, y] = [10, 20];            // x = 10, y = 20
+
+
+
+
+
+                                               JavaScript Data Types
+
+
+
+ - Data type refers to data structure. 
+
+ - It refers to type of data to handle in memory and its behaviour. 
+
+ - JavaScript data types can be categorized into 2 groups
+
+
+
+   1. Primitive Types
+
+   2. Non Primitive Types
+
+
+
+Primitive Types
+
+   - They are immutable types.
+
+   - They have fixed range for value. 
+
+   - Value range can’t change. 
+
+   - They have a fixed structure. 
+
+   - Structure can’t be changed dynamically. 
+
+   - They are stored in memory Stack. 
+
+   - Stack uses “LIFO” Last-In-First-Out.
+
+   - JavaScript primitive data types are
+
+
+
+       1. Number
+
+       2. String 
+
+       3. Boolean 
+
+       4. Null 
+
+       5. Undefined 
+
+       6. Symbol
+
+       7. Big Int 
+
+
+
+Number Type:
+
+       - JavaScript number can be any one of the following 
+
+
+
+               Signed Integer                   -20
+
+               Unsigned Integer                  20
+
+               Float                             34.45
+
+               Double                            340.40
+
+               Decimal                           34500.50  [ 21 to 29 ]
+
+               Exponent                          2e3    2 x 10^3 = 2000
+
+               Hexadecimal                       00x910
+
+               Octa                              0o745
+
+               Binary                            0b1010
+
+               Big Int                           9938838281n
+
+
+
+       - To present number JavaScript provides following methods
+
+
+
+               a) toFixed()
+
+               b) toPrecision()
+
+               c) toLocaleString() 
+
+
+
+toFixed()
+
+       - It is used to set number of fractions to display for a number. 
+
+       
+
+Syntax:            
+
+           var x = 45000.00;
+
+           document.wirte(x);                           // 45000
+
+           document.write(x.toFixed(2));          // 45000.00
+
+
+
+toPrecision()
+
+       - It is used to extract and display the number of digits starting from 0 index.
+
+       
+
+Syntax:
+
+           var x = 45000.45678;
+
+           x.toPrecision(7);              // 45000.46
+
+           x.toPrecision(6);              // 45000.5
+
+
+
+toLocaleString()
+
+       - It can format a number into a regional string. 
+
+       - regional string comprises various notations, currency formats, units etc.
+
+
+
+Syntax: Regional Number
+
+
+
+           var price = 450000;
+
+           price.toLocaleString(‘en-in’);      // 4,50,000
+
+
+
+Syntax: Regional Currency 
+
+
+
+           price.toLocaleString(‘en-in’, { style:”currency”, currency:”INR” });  // ₹ 4,50,000.00
+
+
+
+       - Style can be any one of the following 
+
+                   a) currency 
+
+                   b) decimal
+
+                   c) percent 
+
+                   d) unit 
+
+Syntax: Regional Percent 
+
+
+
+<script>
+
+   var interestRate = 0.563;
+
+   document.write(interestRate.toLocaleString('en-in', {style:"percent"}));
+
+</script>
+
+
+
+Syntax: Regional Unit
+
+       
+
+<script>
+
+   var weight = 56;
+
+   document.write(weight.toLocaleString('en-in', {style:"unit", unit:'kilogram'}));
+
+</script>
+
+
+
+Syntax: Regional Notation 
+
+
+
+<script>
+
+    var views = 5670000;
+
+    document.write(views.toLocaleString('en-us',{notation:"compact"}));
+
+</script>
+
+
+
+Syntax: Minimum and Maximum Fractional Digits
+
+
+
+<script>
+
+    var iphone = 78999;
+
+    document.write(iphone.toLocaleString('en-in', {style:"currency", currency:"INR", minimumFractionDigits:0, maximumFractionDigits:0}));
+
+</script>
+Class comments

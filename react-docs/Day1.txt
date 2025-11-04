@@ -1,0 +1,76 @@
+- HTML, CSS, JavaScript
+- Bootstrap, Tailwind CSS
+
+JavaScript Topics:
+1. Variables
+2. Data Types
+3. Operators
+4. Statements
+5. Functions
+		- Function Declaration
+		- Function Expression
+		- Function Signature 
+		- Function Definition
+		- Function Parameters
+		- Rest Parameters
+		- Spread Operator
+		- Function Generator
+		- Async Function
+		- Function Callback
+		- Function Promise
+		- Function Recursion 
+		- Function Closure 
+		- Pure and Impure Functions
+		- Anonymous Function
+		- IIFE Pattern
+6. JavaScript OOP 
+		- Class
+		- Inheritance 
+
+7. JavaScript DOM & BOM
+
+What is React?
+- It is a JavaScript library for building User Interface.  [ upto 18x ]
+- It is a JavaScript library for Web and Native UI.  [ from 19x ]
+
+Can we build applications using React?
+- Yes with support of framework like Next JS. 
+
+What is difference between React & Angular?
+- React is a library.
+- Angular is a Framework.
+
+Why we need React like library?
+- To build SPA & PWA.
+
+
+What are the challenges in modern Web Development?
+1. Unified UX
+2. Fluid UX
+3. Modular 
+4. Loosely Coupled & Extensible 
+
+What is solution?
+Better to build SPA & PWA.
+
+How to build SPA?
+ - JavaScript & jQuery
+ 
+What are issues with JS & JQ?
+ - lot of DOM interactions 
+ - lot of DOM manipulations
+ - lot of BOM interactions 
+ - lot of code
+
+What are the Features of React?
+
+
+
+
+
+
+
+
+
+
+

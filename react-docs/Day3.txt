@@ -1,0 +1,137 @@
+- React Features
+- Setup Environment for React
+
+React in existing Web Application:
+
+1. Create a new folder for project at any location on your device
+
+					d:\web-app
+
+2. Open project folder in Visual Studio Code editor
+
+3. Run the following command in project terminal  [ Ctrl + ` ]   [ control + shift + ` ] 
+
+					> npm  init  -y
+
+	- It generates “package.json”, which comprises of project meta data. 
+
+4. Add following files & folders into project
+
+		File / Folder					Description
+		
+		package.json					project meta data
+
+		README.md					help document by developers for developers. 
+	
+		.gitignore						configuration of files to ignore while publishing on to GIT.
+
+		public							comprises of static resources like
+											- html
+											- images
+											- documents [pdf, docx, xslx, mkv, avi, json]
+
+		src							 	comprises of dynamic resources like
+											- sass 
+											- css 
+											- js, jsx, ts, tsx etc.
+
+		index.html						startup page for application. 
+ 
+5. Add a new page “home.html” into public folder
+
+6. Add <noscript> element into body section. It is used to verify the status of JavaScript in 
+	browser.
+
+			<noscript>
+					please enable JavaScript on your browser 
+			</noscript>
+
+7. Add a root container into actual DOM which renders the content from Virtual DOM
+
+			<div id=“root”> </div>
+
+8. To enable React in any HTML page you need following libraries 
+
+				a) react 				: it is the core react library that provides all react functions.
+				b) react-dom			: it is the library of creating and handling Virtual DOM
+				c) babel 				: it is a JavaScript compiler. 
+
+	 - React upto 18x version provides CDN for “react & react-dom”.
+
+				https://legacy.reactjs.org/   => docs   =>  CDN 
+
+	 - Copy CDN for development environment and paste into your HTML page <head> section.
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+	- Go to babel official website 
+	
+				https://babeljs.io/  => docs => Integrated Packages => @babe/standalone 
+
+	- Copy standalone CDN and paste into HTML page <head> below react-dom library. 
+
+			    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	
+	- Add a <script> element into <head> section with type as “text/babel” 
+
+				<script type=“text/babel”>
+
+				</script>
+
+	- Create a virtual DOM and render into actual DOM
+
+				// React 17x
+		
+			 	ReactDOM.render(“message | component”, document.getElementById(“root”));
+
+				// React 18x   & 19x
+
+				const root = ReactDOM.createRoot(document.getElementById(“root”));
+				root.render(“message | component”);
+
+- You can install all libraries into project 
+
+			> npm   install   react@18    react-dom@18     @babel/standalone   --save
+
+- All library files are copied into “node_modules”.
+
+Ex: home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+          /* React upto 17 version
+          ReactDOM.render("Welcome to React 17", document.getElementById("root"));
+          */
+
+          // React 18x
+          const root = ReactDOM.createRoot(document.getElementById("root"));
+          root.render("Welcome to React 18x");
+    </script>
+</head>
+<body>
+    <noscript> Please enable JavaScript on your browser. </noscript>
+    <div id="root"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

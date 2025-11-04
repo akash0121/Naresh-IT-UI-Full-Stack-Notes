@@ -1,0 +1,77 @@
+Summary
+- What is React?
+- Why we need React?
+- What are the challenges in modern Web development?
+- How React is different from Angular?
+
+Features of React:
+1. It is component based.
+		- Component comprises of markup, styles & logic.
+		- Easy to reuse & extend. 
+		- Easy maintain and test.
+		- Faster in building applications.
+
+2. It is modular
+		- It is light weight
+		- It uses less memory
+		- It is faster in interactions. 
+		
+3. It uses “Virtual DOM”
+		- Fast in rendering output. 
+	
+4. It uses One Way Binding 
+		- Data binding is One Way implicitly.
+		- You need to configure two way binding explicitly.
+
+
+
+
+FAQ’s:
+	1. What is DOM?
+	A. It is hierarchy of elements in page. 
+
+	2. How DOM is formed?
+		
+		Markup => Bytes => Chars => Tokens => Nodes [Elements] => DOM => Layout =>
+		Render => Paint 
+
+	3. What is shadow DOM?
+	A. It is a hierarchy of elements in a component. [Shadow Root]
+
+	4. What is virtual DOM?
+	A. It is a copy of actual DOM in memory. 
+		It makes the rendering fast. However it requires to update into actual DOM.
+
+Issues with React:
+	- Virtual DOM in memory 
+	- Implicit one way binding
+	- Lot of 3rd party integrations required. 
+	- Lot of GAP’s. 
+
+
+Setup Development Environment for React:
+
+1. Install Node JS on your PC
+
+		https://nodejs.org/
+
+2. Install Visual Studio Code Editor
+
+		https://code.visualstudio.com/download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

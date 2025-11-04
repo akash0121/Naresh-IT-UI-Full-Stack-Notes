@@ -1,0 +1,781 @@
+Bootstrap Classes & Components
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Oct 16
+Table Classes
+
+   .table
+
+   .table-hover
+
+   .table-bordered
+
+   .table-borderless 
+
+   .table-responsive [used for container that contains table] 
+
+   .table-striped 
+
+   .table-{contextual}
+
+   .caption-top
+
+
+
+Syntax:
+
+       <div class=“table-responsive”>
+
+           <table class=“table”>
+
+           </table>
+
+       </div>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h1>Tables</h1>
+
+    <div class="table-responsive w-50">
+
+        <table class="table caption-top bg-warning table-warning table-bordered table-striped table-hover">
+
+        <caption>Product Details</caption>
+
+        <thead>
+
+            <tr>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+                <th>Name</th>
+
+                <th>Price</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+Progress Bar Classes
+
+       
+
+       .progress
+
+       .progress-bar
+
+       .progress-bar-striped 
+
+       .progress-bar-animated
+
+       
+
+Note: The status of progress is shown using width set in “%”.
+
+
+
+Syntax:
+
+       <div class=“progress”>
+
+           <div class=“progress-bar” style=“width:40%”>  </div>
+
+           … you can show multiple ..
+
+       </div>
+
+
+
+Spinner Classes
+
+       .spinner-border
+
+       .spinner-border-sm
+
+       .spinner-grow
+
+       .spinner-grow-sm
+
+
+
+Syntax:
+
+       <div class=“spinner-border”> </div>
+
+       
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h2>Progress</h2>
+
+    <div class="progress">
+
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:40%">
+
+            40% Completed
+
+        </div> 
+
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:60%">
+
+
+
+        </div> 
+
+    </div>
+
+    <h2>Spinner</h2>
+
+    <div class="spinner-border text-danger"></div>
+
+    <div class="spinner-grow text-danger"></div>
+
+    <button class="btn btn-primary">
+
+        <span class="spinner-border spinner-border-sm"></span> Loading
+
+    </button>
+
+</body>
+
+</html>
+
+
+
+Pagination Classes 
+
+       .pagination 
+
+       .page-item
+
+       .page-link
+
+       .page-item-text
+
+       .pagination-sm | lg
+
+       .active
+
+       .disabled
+
+
+
+Syntax:
+
+       <ul class=“pagination”>
+
+           <li class=“page-item”> <a class=“page-link”> 1 </a> </li>
+
+       </ul>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h2>Pagination</h2>
+
+    <ul class="pagination pagination-sm">
+
+        <li class="page-item"> <a class="page-link">&laquo;</a> </li>
+
+        <li class="page-item"><a class="page-link">1</a></li>
+
+        <li class="page-item"><a class="page-link">2</a></li>
+
+        <li class="page-item"><a class="page-link active">3</a></li>
+
+        <li class="page-item"><a class="page-link disabled">4</a></li>
+
+        <li class="page-item"><a class="page-link">5</a></li>
+
+        <li class="page-item"> <a class="page-link">&raquo;</a> </li>
+
+    </ul>
+
+</body>
+
+</html>
+
+
+
+Badge Class
+
+       .badge
+
+       .bg-{contextual} 
+
+       .text-{contextual}
+
+
+
+Syntax:
+
+       <span class=“badge bg-danger”> 2 </span>
+
+
+
+List Classes 
+
+       .list-unstyled 
+
+       .list-group
+
+       .list-group-item
+
+       .list-group-item-text
+
+       .list-group-vertical 
+
+       .list-group-action
+
+       .list-group-{contextual} 
+
+       .list-group-item-{contextual}
+
+       .list-group-horizontal 
+
+
+
+Syntax:
+
+       <ul class=“list-unstyled list-group”>
+
+           <li class=“list-group-item list-group-item-primary”>  </li>
+
+       </ul>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h2>List</h2>
+
+    <ul class="list-unstyled list-group w-25">
+
+        <li class="list-group-item list-group-item-primary"><span>Home</span></li>
+
+        <li class="list-group-item list-group-item-warning"><span>About</span></li>
+
+        <li class="list-group-item list-group-item-danger"><span>Contact</span></li>
+
+        <li class="list-group-item list-group-item-success"><span>Shop</span></li>
+
+        <li class="list-group-item list-group-item-info"><span>Pages</span></li>
+
+    </ul>
+
+</body>
+
+</html>
+
+
+
+Card Classes 
+
+       .card
+
+       .card-header
+
+       .card-body
+
+       .card-footer
+
+       .card-title
+
+       .card-subtitle 
+
+       .card-img-top
+
+       .card-img-bottom
+
+       .card-img-overlay 
+
+
+
+Syntax:
+
+       <div class=“card>
+
+           <img class=“card-img-top”>
+
+           … header …
+
+           … body …
+
+           … footer …
+
+       </div>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h2>Naresh IT</h2>
+
+    <main class="d-flex">
+
+        <div class="card m-2 p-2" style="width:250px">
+
+            <img src="../public/images/html.png" class="card-img-bottom">
+
+            <div class="card-header">
+
+                <h3 class="card-title">HTML & JavaScript</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <ul>
+
+                    <li>Topic-1</li>
+
+                    <li>Topic-2</li>
+
+                    <li>Topic-3</li>
+
+                </ul>
+
+            </div>
+
+            <div class="card-footer">
+
+                <button class="btn btn-warning w-100">Enroll</button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card m-2 p-2" style="width:250px">
+
+            <img src="../public/images/Java.png" class="card-img-top">
+
+            <div class="card-header">
+
+                <h3 class="card-title">HTML & JavaScript</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <ul>
+
+                    <li>Topic-1</li>
+
+                    <li>Topic-2</li>
+
+                    <li>Topic-3</li>
+
+                </ul>
+
+            </div>
+
+            <div class="card-footer">
+
+                <button class="btn btn-warning w-100">Enroll</button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card m-2 p-2" style="width:250px">
+
+            <img src="../public/images/dotnet.png" class="card-img-top">
+
+            <div class="card-header">
+
+                <h3 class="card-title">HTML & JavaScript</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <ul>
+
+                    <li>Topic-1</li>
+
+                    <li>Topic-2</li>
+
+                    <li>Topic-3</li>
+
+                </ul>
+
+            </div>
+
+            <div class="card-footer">
+
+                <button class="btn btn-warning w-100">Enroll</button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+
+
+
+
+
+Bootstrap Components
+
+   - Component comprises of design, styles and functionality. 
+
+   - Design with HTML.
+
+   - Styles with CSS 
+
+   - Functionality with JavaScript library [jQuery]
+
+
+
+1. Alert
+
+   - It is an embedded message box inside page. 
+
+   - You can dynamically control the message. [open / close ] 
+
+
+
+Classes:
+
+   .alert
+
+   .alert-{contextual}
+
+   .alert-dismissible 
+
+   .alert-title
+
+   .alert-subtitle 
+
+   .alert-text
+
+   .alert-link
+
+   
+
+ Attribute: [ to control alert ] 
+
+
+
+   data-bs-dismiss        : It is used for button in alert to close the alert dynamically. 
+
+                                     It refers to component name.
+
+
+
+Syntax:
+
+    <div class=“alert alert-dismissible”>
+
+        <button data-bs-dismiss=“alert”> </button>
+
+        … your content …
+
+   </div>
+
+
+
+Ex:
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-2">
+
+    <h2>Alerts</h2>
+
+    <div class="alert alert-success alert-dismissible w-50">
+
+        <button data-bs-dismiss="alert" class="btn btn-close"></button>
+
+        <h2 class="alert-title">Registered Successfully</h2>
+
+        <p>Your account created and activation link sent to email</p>
+
+        <a href="#" class="alert-link"> Help? </a>
+
+        <br><br>
+
+        <button data-bs-dismiss="alert" class="btn btn-success">OK</button>
+
+    </div>
+
+    <div class="alert alert-danger alert-dismissible w-50">
+
+        <button data-bs-dismiss="alert" class="btn btn-close"></button>
+
+        <h2 class="alert-title">Invalid Login</h2>
+
+        <p>Unable to login</p>
+
+        <a href="#" class="alert-link"> Help? </a>
+
+        <br><br>
+
+        <button data-bs-dismiss="alert" class="btn btn-danger">OK</button>
+
+    </div>
+
+</body>
+
+</html>

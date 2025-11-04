@@ -1,0 +1,454 @@
+-*String Manipulation Methods
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+String Manipulation
+
+1. Length 
+
+2. charAt()
+
+3. charCodeAt()
+
+
+
+4. startsWith()
+
+       - It returns true if string starts with specified char(s).
+
+   
+
+5. endsWith()
+
+       - It returns true if string ends with specified char(s).
+
+
+
+Syntax:
+
+       var str = “welcome”;
+
+       str.startsWith(“w”);       // true
+
+       str.startsWith(“W”);     // false 
+
+       str.endsWith(“me”);     // true
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+
+        function VerifyCard(){
+
+            var card = document.getElementById("txtCard").value; 
+
+            var cardImg = document.getElementById("imgCard");
+
+            if(card.startsWith("4455")){
+
+                cardImg.src = "../public/images/visa.png";
+
+            } else {
+
+                cardImg.src = "../public/images/master.png";
+
+            }
+
+        }
+
+        function VerifyEmail(){
+
+            var email = document.getElementById("txtEmail").value;
+
+            var lblEmail = document.getElementById("lblEmail");
+
+            if(email.endsWith("gmail.com")){
+
+                lblEmail.innerHTML = "";
+
+            } else {
+
+                lblEmail.innerHTML = "Invalid Gmail Account".fontcolor('red').fontsize(2);
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body class="container-fluid">
+
+    <dl class="w-25 mt-3">
+
+        <dt>Card Number</dt>
+
+        <dd class="input-group">
+
+            <input type="text" onblur="VerifyCard()" maxlength="16" id="txtCard" class="form-control">
+
+            <img height="40" width="70" class="input-group-text" id="imgCard">
+
+        </dd>
+
+        <dt>Your gmail Account</dt>
+
+        <dd>
+
+            <input type="text" id="txtEmail" class="form-control" onblur="VerifyEmail()">
+
+        </dd>
+
+        <dd id="lblEmail"></dd>
+
+    </dl>
+
+</body>
+
+</html>
+
+
+
+6. indexOf()
+
+           - It returns the index of specified character in a string. 
+
+           - If character not found then it returns “-1”.
+
+           - It finds and returns the first occurrence index number. 
+
+
+
+7. lastIndexOf()
+
+           - It returns the last occurrence index number of specified char in a string. 
+
+
+
+   Syntax:
+
+         var str = “welcome”;
+
+         str.indexOf(“e”);            // 1
+
+         str.lastIndexOf(“e”);          // 6
+
+         str.indexOf(“a”);             // -1
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+
+        function VerifyCard(){
+
+            var card = document.getElementById("txtCard").value; 
+
+            var cardImg = document.getElementById("imgCard");
+
+            if(card.startsWith("4455")){
+
+                cardImg.src = "../public/images/visa.png";
+
+            } else {
+
+                cardImg.src = "../public/images/master.png";
+
+            }
+
+        }
+
+        function VerifyEmail(){
+
+            var email = document.getElementById("txtEmail").value;
+
+            var lblEmail = document.getElementById("lblEmail");
+
+            if(email.indexOf("@")==-1){
+
+                lblEmail.innerHTML = "Invalid Email".fontcolor('red').fontsize(2);
+
+            } else {
+
+                if(email.endsWith("gmail.com")){
+
+                lblEmail.innerHTML = "";
+
+                } else {
+
+                    lblEmail.innerHTML = "Invalid Gmail Account".fontcolor('red').fontsize(2);
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body class="container-fluid">
+
+    <dl class="w-25 mt-3">
+
+        <dt>Card Number</dt>
+
+        <dd class="input-group">
+
+            <input type="text" onblur="VerifyCard()" maxlength="16" id="txtCard" class="form-control">
+
+            <img height="40" width="70" class="input-group-text" id="imgCard">
+
+        </dd>
+
+        <dt>Your gmail Account</dt>
+
+        <dd>
+
+            <input type="text" id="txtEmail" class="form-control" onblur="VerifyEmail()">
+
+        </dd>
+
+        <dd id="lblEmail"></dd>
+
+    </dl>
+
+</body>
+
+</html>
+
+
+
+8. slice()                : It is used to slice and return the chars between specified index.
+
+                             It uses a start & end index. 
+
+                             End Index must be a value greater than start index.
+
+
+
+Syntax:
+
+         str.slice(startIndex, endIndex);
+
+
+
+9. substr()            : It returns specified number of chars from given index. 
+
+                             It uses count of chars that must be above zero. 
+
+
+
+Syntax:
+
+           str.substr(startIndex, countOfChars)
+
+
+
+10. substring()     : It returns the chars between specified index. 
+
+                              It can read bi-directional.
+
+                              End index reference can be to start or end. 
+
+
+
+Syntax:
+
+           str.substring(startIndex, endReference)
+
+
+
+Note: If only the start index is defined for all methods, then they can read upto end. 
+
+
+
+           str.slice(startIndex)
+
+           str.substr(startIndex)
+
+           str.substring(startIndex)
+
+
+
+Ex:
+
+       var email = prompt(“enter email”);          //     John@gmail.com, david123@outlook.com
+
+       var id = ?                    John, david123
+
+       var domain = ?            gmail.com, outlook.com
+
+   
+
+<script>
+
+    var email = prompt("Enter Email");
+
+    var atPos = email.indexOf("@");
+
+    var id = email.substring(0, atPos);
+
+    var domain = email.substring(atPos+1);
+
+    document.write(`Id=${id}<br>Domain=${domain}`);
+
+</script>
+
+
+
+11. includes() 
+
+        - It returns true if string comprises of specified chars. 
+
+
+
+Syntax:
+
+       str.includes(chars);      // true if string comprises of specified chars. 
+
+   
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function Search(){
+
+            var searchString = document.getElementById("txtSearch").value;
+
+            var listItems = document.getElementsByTagName("li");
+
+            for(var listitem of listItems){
+
+                 if(listitem.textContent.includes(searchString)){
+
+                      listitem.style.display = "block";
+
+                 } else {
+
+                      listitem.style.display = "none";
+
+                 }
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <input type="text" id="txtSearch" onkeyup="Search()" placeholder="search topics">
+
+    <ul>
+
+        <li>JavaScript Projects</li>
+
+        <li>JavaScript Examples</li>
+
+        <li>CSS Examples</li>
+
+        <li>HTML Projects</li>
+
+        <li>HTML Examples</li>
+
+        <li>CSS Tutorials</li>
+
+        <li>JavaScript Tutorial</li>
+
+    </ul>
+
+</body>
+
+</html>
+
+
+
+12. split()
+
+           - It splits a string at specified delimiter and returns an array of strings. 
+
+
+
+Syntax:
+
+       var str = “A-B-C”;
+
+       str.split(‘-‘);     [A, B, C]    0=A, 1=B, 2=C
+
+
+
+Ex:
+
+<script>
+
+    var contacts = "John-9888772277, David-9000772200";
+
+    var [john, david] = contacts.split(','); // [0,1]
+
+    document.write("John Mobile " + john.split('-')[1]);
+
+</script>
+
+
+
+Ex:
+
+<script>
+
+    var email = prompt("Enter Email");
+
+     var [id, domain] = email.split('@');
+
+    document.write(`Id=${id}<br>Domain=${domain}`);
+
+</script>
+Class comments

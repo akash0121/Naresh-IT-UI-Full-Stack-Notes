@@ -1,0 +1,803 @@
+Bootstrap Classes 
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Oct 14
+1. Box Model
+
+2. Positions
+
+       .position-static
+
+       .position-relative
+
+       .position-sticky 
+
+       .position-fixed
+
+       .position-absolute 
+
+       .top-{ }    0,50,100
+
+       .end-{ }
+
+       .start-{ }
+
+       .bottom-{ }
+
+
+
+3. Text & Background color
+
+       .bg-{contextual}
+
+       .text-{contextual}
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-4">
+
+    <button class="bi bi-cart position-relative"> Your Cart <span class="position-absolute badge bg-danger rounded rounded-circle top-0 end-0">2</span> </button>
+
+    <dl>
+
+        <dt class="bg-dark p-2 text-white position-sticky top-0">Electronics</dt>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+        <dd>Televisions</dd>
+
+        <dd>Mobiles</dd>
+
+        <dd>Watches</dd>
+
+    </dl>
+
+</body>
+
+</html>
+
+
+
+4. Text Styles & Effects
+
+       .fs-{ }                font size 1 to 7
+
+       .h{ }                heading size 1 to 6
+
+       .fw-bold
+
+       .fst-italics    
+
+       .text-decoration-underline
+
+       .text-decoration-overline
+
+       .text-decoration-linethrough
+
+        .text-decoration-none
+
+       .text-{ }    align [start, end, center, justify]
+
+       
+
+5.  Float
+
+       .float-start
+
+       .float-end
+
+       .clear-start
+
+       .clear-end
+
+       .clear-both
+
+
+
+6. Display 
+
+       .d-none
+
+       .d-block
+
+       .d-inline
+
+       .d-inline-block
+
+       .d-flex
+
+       .flex-wrap
+
+       .flex-row
+
+       .flex-column        
+
+       .justify-content-between
+
+       .justify-content-around
+
+       .justify-content-evenly
+
+       .justify-content-baseline
+
+       .justify-content-end
+
+       .align-items-center
+
+       .align-items-baseline
+
+       .align-items-end
+
+   
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-4">
+
+    <header class="fs-4 d-flex bg-dark text-white justify-content-between align-items-center border border-1 p-4">
+
+        <div class="fw-bold">Shopper</div>
+
+        <nav class="fs-5">
+
+            <span>Home</span>
+
+            <span class="mx-5">Shop</span>
+
+            <span>Pages</span>
+
+            <span class="mx-5">Docs</span>
+
+            <span>Blog</span>
+
+        </nav>
+
+        <div>
+
+            <span class="bi bi-person"></span>
+
+            <span class="bi bi-heart mx-2"></span>
+
+            <span class="bi bi-cart4"></span>
+
+        </div>
+
+    </header>
+
+</body>
+
+</html>
+
+
+
+7. Grid System
+
+       .row
+
+       .col
+
+       .col-{size}  1 to 12
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-4 bg-secondary">
+
+    <div class="bg-light p-4">
+
+        <div class="text-center fw-bold fs-4">Personal Loan EMI Calculator</div>
+
+        <div class="row my-4">
+
+            <div class="col">
+
+                Amount you need <input type="text" size="16">
+
+            </div>
+
+            <div class="col">
+
+                for <input type="number" value="1" min="1" max="5"> years
+
+            </div>
+
+            <div class="col">
+
+                interest rate <input type="number" min="10.45" max="18.45" value="10.45"> %
+
+            </div>
+
+        </div>
+
+        <div class="row my-4">
+
+            <div class="col">
+
+                <input type="range" class="w-100">
+
+                <span>&#8377; 1,00,000</span>
+
+                <span class="float-end">&#8377; 10,00,000</span>
+
+            </div>
+
+            <div class="col">
+
+                <input type="range" class="w-100">
+
+                <span>1 Year</span>
+
+                <span class="float-end">5 Years</span>
+
+            </div>
+
+            <div class="col">
+
+                <input type="range" class="w-100">
+
+                 <span>10.45%</span>
+
+                <span class="float-end">18.45%</span>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col text-end">
+
+                <button>Calculate</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+Ex: Layout
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-4">
+
+    <section style="height: 400px;" class="border row border-3 border-primary p-2">
+
+        <nav class="col-1 border border-1 border-danger">Nav</nav>
+
+        <main class="col-10 border border-1 border-warning p-2">Main</main>
+
+        <aside class="col-1 border border-1 border-dark">Aside</aside>
+
+    </section>
+
+</body>
+
+</html>
+
+
+
+
+
+8. Button Classes
+
+
+
+       .btn                                    base for all buttons
+
+       .btn-{contextual}
+
+       .btn-outline-{contextual}
+
+       .btn-sm
+
+       .btn-lg
+
+       .btn-link
+
+       .btn-close
+
+       .btn-group
+
+       .btn-group-vertical
+
+       .btn-toolbar 
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-4">
+
+    <nav class="btn-toolbar bg-danger">
+
+        <button class="btn btn-danger">Amazon</button>
+
+        <button class="btn btn-danger">Shop</button>
+
+        <button class="btn btn-danger">Pages</button>
+
+        <button class="btn btn-danger">Docs</button>
+
+        <button class="btn btn-danger">Blog</button>
+
+    </nav>
+
+    <dl>
+
+        <dt>Button Base</dt>
+
+        <dd>
+
+            <button class="btn">Submit</button>
+
+        </dd>
+
+        <dt>Contextual</dt>
+
+        <dd>
+
+            <button class="btn btn-primary">Insert</button>
+
+            <button class="btn btn-warning">Update</button>
+
+            <button class="btn btn-danger">Delete</button>
+
+        </dd>
+
+         <dt>Outline Contextual</dt>
+
+        <dd>
+
+            <button class="btn btn-outline-primary">Insert</button>
+
+            <button class="btn btn-outline-warning">Update</button>
+
+            <button class="btn btn-outline-danger">Delete</button>
+
+        </dd>
+
+         <dt>Outline Contextual</dt>
+
+        <dd>
+
+            <button class="btn btn-outline-primary">Insert</button>
+
+            <button class="btn btn-outline-warning btn-sm">Update</button>
+
+            <button class="btn btn-outline-danger btn-lg">Delete</button>
+
+        </dd>
+
+        <dt>Special</dt>
+
+        <dd>
+
+            <button class="btn btn-link">Signout</button>
+
+            <button class="btn btn-close"></button>
+
+        </dd>
+
+        <dt>Button Group</dt>
+
+        <dd class="btn-group-vertical">
+
+            <button class="bi bi-play btn btn-danger"></button>
+
+            <button class="bi bi-pause btn btn-danger"></button>
+
+            <button class="bi bi-stop btn btn-danger"></button>
+
+        </dd>
+
+    </dl>
+
+</body>
+
+</html>
+
+
+
+9. Form Classes
+
+   
+
+       .form-control                text, email, url, date, textarea, number, password.. string input
+
+       .form-select                dropdown 
+
+       .form-check-input        radio, checkbox
+
+       .form-label                    label
+
+       .form-check-label        label for radio & checkbox
+
+       .form-control-color        color
+
+       .form-control-file        file
+
+       .form-switch                for container that contains radio & checkbox
+
+       .form-range                range 
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-2 d-flex justify-content-center">
+
+   <form class="border bg-dark text-white border-secondary w-25 rounded rounded-3 border-1 shadow shadow-lg p-4">
+
+        <div class="bi my-2 bi-person-circle fs-4 fw-bold "> Register User </div>
+
+        <div class="mb-3">
+
+            <label class="form-label fw-bold">User Name</label>
+
+            <div>
+
+                <input type="text" class="form-control">
+
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label fw-bold">Password</label>
+
+            <div>
+
+                <input type="password" class="form-control">
+
+            </div>
+
+        </div>
+
+         <div class="mb-3">
+
+            <label class="form-label fw-bold">Your city</label>
+
+            <div>
+
+                <select class="form-select">
+
+                    <option>Select City</option>
+
+                    <option>Delhi</option>
+
+                    <option>Hyd</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+         <div class="mb-3">
+
+            <label class="form-label fw-bold">Gender</label>
+
+            <div>
+
+                <input type="radio" class="form-check-input" name="gender"> <label class="form-check-label">Male</label>
+
+                <input type="radio" class="form-check-input" name="gender"> <label class="form-check-label">Female</label>
+
+            </div>
+
+        </div>
+
+        <div class="mb-2">
+
+            <label>Range</label>
+
+            <div>
+
+                <input type="range" class="form-range">
+
+            </div>
+
+        </div>
+
+        <div class="mb-3 form-switch">
+
+           <input type="checkbox" class="form-check-input"> <label class="form-check-label">Subscribe</label>
+
+        </div>
+
+        <div>
+
+            <button class="btn btn-light w-100">Register</button>
+
+        </div>
+
+   </form>
+
+</body>
+
+</html>
+
+
+
+
+
+10. Input Group 
+
+       .input-group
+
+       .input-group-text
+
+       .input-group-sm | lg
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-4">
+
+    <h2>Amazon Search</h2>
+
+    <div class="input-group">
+
+        <select class="input-group-text">
+
+            <option>All</option>
+
+        </select>
+
+        <input type="text" class="form-control" placeholder="Search Amazon.in">
+
+        <button class="btn btn-warning bi bi-search"></button>
+
+    </div>
+
+    <h2>Register</h2>
+
+    <div class="w-25 input-group">
+
+        <span class="bi input-group-text bi-person-circle"></span>
+
+        <input type="text" placeholder="User Name" class="form-control">
+
+        <span class="input-group-text"> <input type="checkbox"> </span>
+
+    </div>
+
+    <div class="w-25 my-2 input-group">
+
+        <span class="bi input-group-text bi-key-fill"></span>
+
+        <input type="password" placeholder="Password" class="form-control">
+
+        <span class="input-group-text"> <input type="checkbox"> </span>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+JavaScript Output & Input Techniques
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Oct 25
+Reference 
+
+- By BOM 
+
+- By Name
+
+- By ID
+
+- By Query Selector 
+
+Output
+
+- alert()
+
+- confirm()
+
+
+
+3. document.write()
+
+       - It presents output in a new screen of same page.
+
+       - It can render value, expression result & markup. 
+
+
+
+Syntax:
+
+       document.write(“value | expression | markup”);
+
+
+
+       - Line breaks are defined using markup. 
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        
+
+        function DeleteClick(){
+
+            result = confirm("Delete Record\nAre you sure?");
+
+            if(result==true){
+
+                document.write("<h3><font color='red'>Deleted..</font></h3><a href='output.html'>Back</a>");
+
+            } else {
+
+                alert("Canceled..");
+
+            }
+
+            
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="DeleteClick()">Delete</button>
+
+</body>
+
+</html>
+
+
+
+4. innerText  & textContent 
+
+       - innerText is ES4 output technique of rendering result into a container that can display
+
+         text. 
+
+       - textContent is from E5+ version and recommended for both semantic and non-semantic
+
+         elements.
+
+       - Both can’t display complex formats of text. [ both are RC type ].
+
+   
+
+Syntax:
+
+           document.querySelector(“div”).textContent = “value | expression result”;
+
+           document.querySelector(“p”).innerText = “value | expression result”;
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        
+
+        function DeleteClick(){
+
+            result = confirm("Delete Record\nAre you sure?");
+
+            if(result==true){
+
+                document.querySelector("p").textContent = "Deleted..";
+
+            } else {
+
+                document.querySelector("p").innerText = "Canceled..";
+
+            }
+
+            
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="DeleteClick()">Delete</button>
+
+    <p></p> 
+
+</body>
+
+</html>
+
+
+
+5. innerHTML 
+
+       - It similar to textContent but allows markup to render. 
+
+       - The target element must allow markup. 
+
+       - It renders the resulting markup into target element. 
+
+
+
+Syntax:
+
+           document.querySelector(“p”).innerHTML = “<h2> Welcome </h2>”;
+
+
+
+           <p> 
+
+               <h2> Welcome </h2>
+
+           </p>
+
+
+
+6. outerHTML 
+
+       - It is similar to innerHTML but replaces the target element with new element. 
+
+       - It can render a markup by replacing existing markup. 
+
+
+
+Syntax:
+
+           document.querySelector(“p”).outerHTML = “<h2> Welcome </h2>”;
+
+
+
+           <h2>Welcome</h2>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        
+
+        function DeleteClick(){
+
+            result = confirm("Delete Record\nAre you sure?");
+
+            if(result==true){
+
+                document.querySelector("p").outerHTML = "<h2 style='color:red'>Deleted..</h2>";
+
+            } else {
+
+                document.querySelector("p").innerText = "Canceled..";
+
+            }
+
+            
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="DeleteClick()">Delete</button>
+
+    <p></p> 
+
+</body>
+
+</html>
+
+
+
+
+
+7. Console Methods
+
+           - Console is a CLI ( Command Line Tool ) of browser.
+
+           - It is a bebugging tool of browser. 
+
+           - It is used by developers to test various commands in browser. 
+
+           - JavaScript provides several contextual console methods to display message inside
+
+             console. 
+
+
+
+           console.log()
+
+           console.error()
+
+           console.warn()
+
+           console.debug()
+
+           console.info() etc..
+
+
+
+           - Console methods are RC type. You can’t render markup. 
+
+           - Line break is defined using “\n”.
+
+
+
+Syntax:
+
+           console.log(“value | expression result”);
+
+           console.log(“line-1 \n line-2”);
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        
+
+        function DeleteClick(){
+
+            console.warn("Delete Clicked");
+
+            result = confirm("Delete Record\nAre you sure?");
+
+            if(result==true){
+
+                console.error("Deleted - OK Clicked");
+
+                document.querySelector("p").outerHTML = "<h2 style='color:red'>Deleted..</h2>";
+
+            } else {
+
+                document.querySelector("p").innerText = "Canceled..";
+
+                console.log("Canceled");
+
+            }
+
+            
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="DeleteClick()">Delete</button>
+
+    <p></p> 
+
+</body>
+
+</html>
+
+
+
+Summary
+
+   - alert()
+
+   - confirm()
+
+   - document.write()
+
+   - innerText
+
+   - textContent 
+
+   - innerHTML
+
+   - outerHTML
+
+   - console methods 
+
+
+
+JavaScript Input Techniques:
+
+   - Input is the process of accepting a value from user. 
+
+   - User can request with input.
+
+   - User input can be from various locations
+
+
+
+1. Query String
+
+2. prompt() 
+
+3. Form Input Elements
+
+
+
+Query String:
+
+   - Query String is appended into URL and stored in browser address bar. 
+
+   
+
+                      page.html ?key=value&key=value&key=value..
+
+   
+
+   - It is appended using “?”, and it is a key and value collection. 
+
+   - Multiple keys are appended using “&”. 
+
+   - You can access query string by using browser “location.search” property. 
+
+   - Location is a browser object and “search” is a property. 
+
+   - Query string is returned as “string”.
+
+
+
+                   ‘?key=value&key=value’
+
+       
+
+   - You can separate the string into a key & value collection by using JavaScript browser
+
+     method “URLSearchParams()”.
+
+   
+
+                   name = new URLSearchParams(location.search);
+
+
+
+   - “new” is dynamic memory allocation operator. 
+
+   - You can get the value with reference of key.
+
+
+
+                   name.get(“key”);
+
+   
+
+Ex:
+
+   1. search.html
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+
+<body class="container-fluid">
+
+    <h3>Search</h3>
+
+    <form action="./results.html" class="input-group w-50">
+
+        <select name="category" class="input-group-text">
+
+            <option>Select Category</option>
+
+            <option>Fashion</option>
+
+            <option>Footwear</option>
+
+            <option>Electronics</option>
+
+        </select>
+
+        <input class="form-control" type="text" name="product">
+
+        <button type=“submit” class="btn btn-warning bi bi-search"></button>
+
+    </form>
+
+</body>
+
+</html>
+
+
+
+2. results.html
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Results</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script>
+
+        function bodyload(){
+
+             params = new URLSearchParams(location.search);
+
+             document.getElementById("lblCategory").textContent = params.get("category");
+
+             document.getElementById("lblProduct").textContent = params.get("product");
+
+        }
+
+    </script>
+
+</head>
+
+<body class="container-fluid" onload="bodyload()">
+
+    <h3>Search Results</h3>
+
+    <dl>
+
+        <dt>Category</dt>
+
+        <dd id="lblCategory"></dd>
+
+        <dt>Product</dt>
+
+        <dd id="lblProduct"></dd>
+
+    </dl>
+
+    <a class="btn btn-warning" href="./search.html">Back to Search</a>
+
+</body>
+
+</html>
+Class comments

@@ -1,0 +1,540 @@
+Number & String Data Types
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+Number Type
+
+- Various number formats & methods
+
+   toFixed()
+
+   toPrecision()
+
+   toLocaleString()
+
+
+
+- You can convert a numeric string into number by using the methods
+
+   
+
+   a) parseInt()
+
+   b) parseFloat()
+
+
+
+   Syntax:
+
+           var rate = “18.45”;
+
+           parseFloat(rate) + 1;      // 19.45
+
+           parseInt(rate) + 1;          // 19
+
+
+
+Ex:
+
+<script>
+
+     var rate = parseFloat(prompt("Enter rate"));
+
+     document.write("rate increased by 1 = " + (rate+1));
+
+</script>
+
+
+
+ - You can verify number by using “isNaN()” method. It returns “true” if value is not number. 
+
+
+
+Syntax:
+
+           if (isNaN(value))
+
+           {
+
+               // statement if it is not a number
+
+           }
+
+
+
+Ex:
+
+<script>
+
+    var age = prompt("Enter Age");
+
+    if(isNaN(age)){
+
+        alert("Age must be a number");
+
+    } else {
+
+        document.write("Your Age is " + age);
+
+    }
+
+</script>
+
+
+
+String Type:
+
+   - String is a literal with group of characters enclosed in 
+
+       a) Double Quotes        “string”
+
+       b) Single Quotes        ‘string’
+
+       c) Backticks            `string`
+
+
+
+   - Characters group includes alphabet, number & special characters.
+
+   - Double & Single quotes are used to configure outer & inner string. 
+
+
+
+               “outer ‘inner’ string”
+
+               ‘outer “inner” string’    
+
+
+
+   - Double and single quotes require lot of concat with “+” operator to bind dynamic values and expression. 
+
+
+
+Ex:
+
+<script>
+
+    var user = prompt("Enter User Name");
+
+    var age = parseInt(prompt("Enter Age"));
+
+
+
+    var msg1 = "Hello !&nbsp;" + user + "&nbsp;you will be&nbsp;" + (age+1) + "&nbsp;next year.";
+
+    document.write(msg1);
+
+</script>8
+
+  
+
+   - JavaScript ES6+ version supports backticks that allows embedded expression by using a data binding expression “${ }”.
+
+   - Data Binding expression is not allowed in a string with double or single quote. 
+
+
+
+Ex:
+
+<script>
+
+    var user = prompt("Enter User Name");
+
+    var age = parseInt(prompt("Enter Age"));
+
+
+
+    var msg1 = "Hello !&nbsp;" + user + "&nbsp;you will be&nbsp;" + (age+1) + "&nbsp;next year.<br>";
+
+    var msg2 = `Hello ! ${user} you will be ${age+1} next year.`;
+
+    document.write(msg1);
+
+    document.write(msg2);
+
+</script>
+
+
+
+   - String literal can escape printing of few special chars. 
+
+   - You have to print non-printable chars by using “\”.
+
+   
+
+Syntax:
+
+             var path = “d:\\images\\poster.jpg”;       => d:\images\poster.jpg
+
+
+
+Ex:
+
+<script>
+
+    var path = "\"D:\\images\\poster.jpg\"";
+
+    document.write(path);
+
+</script>
+
+
+
+   - JavaScript provides various methods for formatting a string dynamically. 
+
+
+
+               bold()
+
+               italics()
+
+               sup()
+
+               sub()
+
+               fontcolor()
+
+               fontsize()
+
+               toUpperCase()
+
+               toLowerCase() etc.
+
+
+
+   - Formatting methods render a markup, hence you can use only in a element that is not
+
+     RC type. 
+
+
+
+               bold()                    <b> </b>
+
+               fontcolor(‘red’)        <font color=‘red’> </font>
+
+
+
+Ex:
+
+<script>
+
+    var path = "\"D:\\images\\poster.jpg\"";
+
+    document.write(path.fontcolor('red').bold().italics());
+
+</script>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function ChangeCase(){
+
+            var code = document.getElementById("txtCode").value; 
+
+            document.getElementById("txtCode").value = code.toUpperCase();
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <dl>
+
+        <dt>Bank IFSC Code</dt>
+
+        <dd><input type="text" onblur="ChangeCase()" id="txtCode"></dd>
+
+    </dl>
+
+</body>
+
+</html>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function ApplyClick(){
+
+            var color = document.getElementById("txtColor").value; 
+
+            var size = document.getElementById("txtSize").value; 
+
+            document.querySelector("p").innerHTML = "SAMPLE TEXT".fontcolor(color).fontsize(size);
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <dl>
+
+        <dt>Font Color</dt>
+
+        <dd><input onchange="ApplyClick()" type="color" id="txtColor"></dd>
+
+        <dt>Font Size</dt>
+
+        <dd><input onchange="ApplyClick()" type="range" id="txtSize" min="1" max="7" value="1"></dd>
+
+    </dl>
+
+    <button onclick="ApplyClick()">Apply</button>
+
+    <p>SAMPLE TEXT</p>
+
+</body>
+
+</html>
+
+
+
+   - JavaScript provides various properties and methods for manipulating string.
+
+   
+
+1. length
+
+       - It returns the total count of chars in a string. 
+
+
+
+Syntax:
+
+       var str = “welcome”;
+
+       str.length;                    // 7
+
+ 
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function VerifyName(){
+
+            var username = document.getElementById("txtName").value; 
+
+            var Namelabel = document.getElementById("lblName");
+
+            if(username.length==0){
+
+                Namelabel.innerHTML = "User Name Required".fontcolor('red').fontsize('2');
+
+            } else {
+
+                Namelabel.innerHTML = "";
+
+            }
+
+        }
+
+        function VerifyComments(){
+
+            var comments = document.getElementById("txtComments").value;
+
+            var lblComments = document.getElementById("lblComments");
+
+            lblComments.innerHTML = `${100-comments.length} chars left`.fontcolor('gold');
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <dl>
+
+        <dt>User Name</dt>
+
+        <dd><input type="text" onkeyup="VerifyName()" onblur="VerifyName()" id="txtName"></dd>
+
+        <dd id="lblName"></dd>
+
+        <dt>Your Comments</dt>
+
+        <dd>
+
+            <textarea maxlength="100" onkeyup="VerifyComments()" rows="4" cols="40" id="txtComments"></textarea>
+
+        </dd>
+
+        <dd id="lblComments"></dd>
+
+    </dl>
+
+</body>
+
+</html>
+
+
+
+2. charAt()
+
+       - It returns the character at specified index.
+
+       - Index starts with 0.
+
+
+
+Syntax:
+
+       var str = “Ajay”;
+
+       str.charAt(0);        // A
+
+       str.charAt(2);       // a
+
+
+
+3. charCodeAt()
+
+       - It returns the ASCII code of character at specified index. 
+
+       - ASCII code for chars 
+
+                   A = 65, Z=90
+
+                   a = 97, z=122
+
+       
+
+Syntax:
+
+        var str = “Ajay”;
+
+        str.charCodeAt(0);     // 65
+
+
+
+Ex
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function VerifyName(){
+
+            var username = document.getElementById("txtName").value; 
+
+            var Namelabel = document.getElementById("lblName");
+
+            if(username.length==0){
+
+                Namelabel.innerHTML = "User Name Required".fontcolor('red').fontsize('2');
+
+            } else {
+
+                if(username.charCodeAt(0)>=65 && username.charCodeAt(0)<=90){
+
+                     Namelabel.innerHTML = "";
+
+                } else {
+
+                     Namelabel.innerHTML = "Name must start with uppercase letter".fontcolor('red').fontsize('2');
+
+                }
+
+            }
+
+        }
+
+        function VerifyComments(){
+
+            var comments = document.getElementById("txtComments").value;
+
+            var lblComments = document.getElementById("lblComments");
+
+            lblComments.innerHTML = `${100-comments.length} chars left`.fontcolor('gold');
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <dl>
+
+        <dt>User Name</dt>
+
+        <dd><input type="text" onkeyup="VerifyName()" onblur="VerifyName()" id="txtName"></dd>
+
+        <dd id="lblName"></dd>
+
+        <dt>Your Comments</dt>
+
+        <dd>
+
+            <textarea maxlength="100" onkeyup="VerifyComments()" rows="4" cols="40" id="txtComments"></textarea>
+
+        </dd>
+
+        <dd id="lblComments"></dd>
+
+    </dl>
+
+</body>
+
+</html>
+Class comments

@@ -1,0 +1,463 @@
+Collapses, Accordion, Dropdown, Nav & Tabs
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+1. Alert
+
+2. Modal
+
+3. Offcanvas
+
+4. Carousel 
+
+
+
+5. Collapse 
+
+   - It is used to show / hide any content dynamically. 
+
+
+
+Classes 
+
+       .collapse
+
+       .show
+
+
+
+Syntax:
+
+       <div class=“collapse show”>  
+
+           … your content …
+
+       </div>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h2>Collapse</h2>
+
+    <button data-bs-target="#q1" data-bs-toggle="collapse" class="btn btn-dark w-100"> What is Netflix ? </button>
+
+    <div class="mt-2 collapse show" id="q1">
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti sunt deserunt porro quaerat quos consequatur dignissimos magnam harum! Laboriosam voluptas placeat voluptate incidunt error libero officiis aut explicabo minus exercitationem? 
+
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur quasi quibusdam veritatis non sapiente sint quidem, commodi repellat ex numquam vero ipsum beatae deserunt architecto, in porro, eligendi cupiditate sit?
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+6. Accordion 
+
+       - It is a set of collapsable content with mutex mechanism. 
+
+       - Mutex is “Mutual Exclusion”. If one is expanded then all others will collapse.
+
+
+
+Classes 
+
+       .accordion
+
+       .accordion-item
+
+       .accordion-header
+
+       .accordion-body
+
+       .accordion-collapse 
+
+       .accordion-button 
+
+
+
+Attributes
+
+       data-bs-target
+
+       data-bs-toggle 
+
+       data-bs-parent   [ It is defined for collapse in accordion to exhibit mutex ]
+
+
+
+Syntax:
+
+       <div class=“accordion”>
+
+           <div class=“accordion-item”>
+
+                 <div class=“accordion-header”>     
+
+                       … accordion button …
+
+                 </div>
+
+                 <div class=“accordion-collapse collapse”>
+
+                   <div class=“accordion-body”>
+
+                           … body content …
+
+                   </div>
+
+                </div>
+
+           </div>
+
+            …. multiple  items …
+
+       </div>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h3 class="text-center">Frequently Asked Questions</h3>
+
+    <div class="accordion" id="faqs">
+
+        <div class="accordion-item">
+
+            <div class="accordion-header">
+
+                <button data-bs-target="#q1" data-bs-toggle="collapse" class="accordion-button"> What is Netflix?  </button>
+
+            </div>
+
+            <div class="accordion-collapse collapse" id="q1" data-bs-parent="#faqs">
+
+                <div class="accordion-body">
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione velit mollitia sint dicta odio aut vitae iste vero ex. Magnam dicta numquam consequuntur non culpa ipsam assumenda et, natus incidunt? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit impedit mollitia quasi cum aut quos, odio minima. Nisi officia tempore vel recusandae, facilis quas nemo quos. Assumenda rerum aut illo?</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+         <div class="accordion-item">
+
+            <div class="accordion-header">
+
+                <button data-bs-target="#q2" data-bs-toggle="collapse" class="accordion-button"> How much does Netflix cost?</button>
+
+            </div>
+
+            <div class="accordion-collapse collapse" id="q2" data-bs-parent="#faqs">
+
+                <div class="accordion-body">
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione velit mollitia sint dicta odio aut vitae iste vero ex. Magnam dicta numquam consequuntur non culpa ipsam assumenda et, natus incidunt? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit impedit mollitia quasi cum aut quos, odio minima. Nisi officia tempore vel recusandae, facilis quas nemo quos. Assumenda rerum aut illo?</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+7. Dropdown 
+
+       - Configures a dropdown list with various orientations.
+
+       - List comprises of items with complex content. 
+
+
+
+Classes:
+
+       .dropdown
+
+       .dropup
+
+       .dropstart
+
+       .dropend 
+
+       .dropdown-menu
+
+       .dropdown-item
+
+       .dropdown-toggle 
+
+       .dropdown-item-text 
+
+       .dropdown-divider 
+
+
+
+Attribute:
+
+       data-bs-toggle    [ for button to toggle dropdown]
+
+
+
+Syntax:
+
+       <div class=“dropdown”>
+
+           <button class=“dropdown-toggle”> Text </button>
+
+           <ul class=“dropdown-menu”>
+
+               <li class=“dropdown-item”> <span class=“dropdown-item-text”> Item </span> </li>
+
+           </ul>
+
+       </div>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h2>Dropdown</h2>
+
+    <div class="dropend">
+
+        <button data-bs-toggle="dropdown" class="btn btn-dark dropdown-toggle"> <span class="bi bi-person-circle"></span> Login</button>
+
+        <ul class="dropdown-menu" data-bs-theme="dark">
+
+            <li class="dropdown-item"> <span class="dropdown-item-text"> <span class="bi bi-person"></span> Your Profile </span> </li>
+
+            <li class="dropdown-item"> <span class="dropdown-item-text"> <span class="bi bi-heart"></span> Wish List </span> </li>
+
+            <li class="dropdown-item"> <span class="dropdown-item-text"> <span class="bi bi-gift"></span> Offers </span> </li>
+
+            <li class="dropdown-item"> <span class="dropdown-item-text"> <span class="bi bi-gift"></span> <a class="text-white text-decoration-none" href="../public/amazon-cards.html">Amazon</a> </span> </li>
+
+            <li class="dropdown-divider"></li>
+
+            <li class="dropdown-item"> <span class="dropdown-item-text"> <span class="bi bi-question-circle"></span> Help </span> </li>
+
+        
+
+        </ul>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+8. Nav & Tabs
+
+       - It is used to configure a tab based navigation in page.
+
+       - A page can display various content in multiple tabs. 
+
+       - User can switch between tabs dynamically. 
+
+
+
+Classes 
+
+       .nav
+
+       .nav-tabs
+
+       .nav-pills 
+
+       .nav-menu
+
+       .nav-item
+
+       .nav-link
+
+       .nav-text 
+
+       .tab-content 
+
+       .tab-pane
+
+       .active
+
+
+
+Attributes:
+
+       data-bs-target
+
+       data-bs-toggle 
+
+
+
+Syntax:
+
+       <ul class=“nav nav-tabs”>
+
+           <li  class=“nav-item”> <a  class=“nav-link”> Text </a> </li>
+
+       </ul>
+
+       <div class=“tab-content”>
+
+           <div class=“tab-pane”>
+
+               …
+
+           </div>
+
+           … multiple tab panes …
+
+       </div>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="p-3">
+
+    <h2>Product Info</h2>
+
+    <ul class="nav nav-tabs">
+
+        <li class="nav-item"> <a href="#basic" data-bs-toggle="tab" class="nav-link active"> Basic Details </a> </li>
+
+        <li class="nav-item"> <a href="#preview" data-bs-toggle="tab" class="nav-link"> Preview </a> </li>
+
+        <li class="nav-item"> <a href="#reviews" data-bs-toggle="tab" class="nav-link"> Ratings & Reviews </a> </li>
+
+    </ul>
+
+    <div class="tab-content mt-4">
+
+        <div class="tab-pane active" id="basic">
+
+            <h3> Apple iPhone 16 (Pink, 128 GB) </h3>
+
+            <h4> &#8377; 79,999/- </h4>
+
+        </div>
+
+        <div class="tab-pane" id="preview">
+
+            <img src="../public/images/iphone-pink.png" width="200" height="300">
+
+        </div>
+
+        <div class="tab-pane" id="reviews">
+
+            <span class="badge text-white bg-success rounded p-2"> 4 <span class="bi bi-star-fill"></span> </span>
+
+            <span class="fw-bold text-secondary mx-2"> 40,300 ratings & 230 reviews </span>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

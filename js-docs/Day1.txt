@@ -1,0 +1,132 @@
+JavaScript
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Oct 22
+Google Stitch 
+
+   https://stitch.withgoogle.com
+
+
+
+
+
+                                               JavaScript
+
+
+
+- JavaScript is a light weight interpreted and JIT compiled programming language. 
+
+
+
+    * Light weight refers to less memory.
+
+    * Interpreted allows to translate line-by-line of program. 
+
+    * Compiled allows to translate all lines simultaneously at the same time. 
+
+    * There are 2 types of compiling techniques 
+
+           a) JIT    [Just-In-Time]
+
+           b) AOT    [Ahead-Of-Time]
+
+   
+
+    * JIT compiles on request. It loads script when requested and compiles Just-In-Time. 
+
+    * AOT is a pre-compiled technique, where It is compiled at application level and just runs
+
+      on request. 
+
+    * The popular JavaScript compilers are
+
+           a) Babel
+
+           b) V8 
+
+           c) Node  Compiler etc.
+
+
+
+- JavaScript is a language that supports various programming paradigms. 
+
+           a) Structural 
+
+           b) Functional
+
+           c) Imperative 
+
+           d) Object Based etc.
+
+
+
+- JavaScript is used as
+
+           a) Client Side
+
+           b) Server Side
+
+           c) Database language
+
+           d) Action Script
+
+
+
+   * It is used client side with HTML.
+
+   * It is used server side with Node & Express JS.
+
+   * It is used in database with MongoDB.
+
+   * It is used as action script with 2D & 3D modelling tools.
+
+
+
+JavaScript Client Side
+
+   - A client side script is required to reduce burden on server. 
+
+   - It can handle interactions on client device and improve the performance of application. 
+
+   - JavaScript client side can handle 
+
+       a) DOM Manipulations  [Document Object Model]
+
+               - Adding elements
+
+               - Removing elements
+
+               - Data Binding
+
+               - Style Binding
+
+               - Class Binding
+
+               - Event Binding 
+
+               - Model Binding etc.
+
+       b) BOM Interactions  [Browser Object Model]
+
+               - window
+
+               - location
+
+               - navigator 
+
+               - history
+
+               - document 
+
+       c) Validations 
+
+
+
+Note: Client Side interactions require JavaScript to enable in browser. 
+
+         If JavaScript is enabled then it may help trozens in broadcasting client details to others.
+
+
+
+Evolution & Versions of JavaScript
+Class comments

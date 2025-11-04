@@ -1,0 +1,345 @@
+Navbar & Tailwind CSS
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+6:38 PM
+1. Alert
+
+2. Modal 
+
+3. Offcanvas
+
+4. Collapse 
+
+5. Accordion 
+
+6. Carousel 
+
+7. Dropdown 
+
+8. Nav & Tabs
+
+9. Container Classes 
+
+       - Bootstrap provides containers for responsive design.
+
+       - Container is designed with “@media” queries. 
+
+
+
+           .container                    base 
+
+           .container-sm                 mobile
+
+           .container-md                 tab
+
+           .container-lg                 pc
+
+           .container-xl                laptop
+
+           .container-xxl               laptop/pc wide screen 
+
+           .container-fluid             responsive 
+
+
+
+Syntax:
+
+           <body  class=“container-fluid”>  </body>
+
+
+
+10. Navbar
+
+       - It configures a responsive navigation for application. 
+
+       - It uses media queries for responsive design. 
+
+
+
+Classes:
+
+       .navbar
+
+       .navbar-expand-lg | md | sm 
+
+       .navbar-toggler 
+
+       .navbar-toggler-icon 
+
+       .navbar-nav
+
+       .nav-menu
+
+       .nav-item
+
+       .nav-link
+
+       .navbar-collapse 
+
+       .navbar-brand
+
+       .navbar-dark | navbar-light 
+
+
+
+Attributes:
+
+       data-bs-target
+
+       data-bs-toggle 
+
+
+
+Syntax:
+
+   <nav  class=“navbar  navbar-expand-lg  navbar-dark bg-dark”>
+
+     <div class=“container-fluid”>
+
+       
+
+           … brand …
+
+           … toggler …
+
+           
+
+           <div class=“navbar-collapse collapse”>
+
+                 … navbar-nav …
+
+           </div>
+
+
+
+      </div>
+
+    </nav>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="navbar-brand">Shopping.</div>
+
+            <div class="navbar-collapse collapse" id="menu">
+
+                <ul class="navbar-nav">
+
+                <li class="nav-item"> <a class="nav-link"> Home </a> </li>
+
+                <li class="nav-item"> <a href="../public/amazon-cards.html" target="framebody" class="nav-link"> Shop </a> </li>
+
+                <li class="nav-item"> <a class="nav-link"> Pages </a> </li>
+
+                <li class="nav-item"> <a class="nav-link"> Blog </a> </li>
+
+                <li class="nav-item"> <a class="nav-link"> Docs </a> </li>
+
+                <li class="nav-item"> 
+
+                    <div class="input-group">
+
+                        <input type="text" class="form-control">
+
+                        <button class="btn btn-warning bi bi-search"></button>
+
+                    </div>    
+
+                </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="mt-5">
+
+        <iframe style="height:500px" width="100%" name="framebody"></iframe>
+
+    </section>
+
+</body>
+
+</html>
+
+
+
+11. Bread Crumb 
+
+           - It is used to show the status of task performed in hierarchy. 
+
+           - It can display the levels using a divider. 
+
+
+
+Classes:
+
+       .breadcrumb 
+
+       .breadcrumb-item 
+
+
+
+           - You can change the breadcrumb separator using Sass variable 
+
+             “--bs-breadcrumb-divider” 
+
+
+
+Syntax:
+
+       <ul  class=“breadcrumb”  style=“--bs-breadcrumb-divider: ‘ > ’ ”>
+
+
+
+           <li class=“breadcrumb-item”> Text </li>
+
+
+
+       </ul>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body class="container-fluid">
+
+    <h2>Flipkart</h2>
+
+    <ul class="breadcrumb" style="--bs-breadcrumb-divider: ' > ' ">
+
+        <li class="breadcrumb-item"> Home </li>
+
+        <li class="breadcrumb-item"> Electronics </li>
+
+        <li class="breadcrumb-item"> Mobiles </li>
+
+        <li class="breadcrumb-item"> Apple Mobiles </li>
+
+        <li class="breadcrumb-item active"> iPhone </li>
+
+    </ul>
+
+</body>
+
+</html>
+
+       
+
+12. Scroll Spy
+
+       
+
+
+
+                                               Tailwind CSS 
+
+
+
+- It is a utility-first CSS framework for rapidly building interactive and responsive UI. 
+
+- Utility first refers to various classes required for margin, padding, flex, text styles, transforms etc.
+
+- You can setup tailwind using various bundling tools. If you want to add to your existing projects [web application] then follow “Tailwind CLI” installation process. 
+
+
+
+1. Open terminal in your project and install 
+
+
+
+       > npm install tailwindcss @tailwindcss/cli
+
+
+
+2. Go to “src/styles”  add a new file by name “input.css” 
+
+
+
+3. Add following line into “input.css” 
+
+
+
+           @import "tailwindcss";
+
+
+
+4. Compile and translate tailwind “input.css” into “output.css”
+
+
+
+           > npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch
+
+
+
+5. Link “output.css” to your HTML page. 
+
+
+
+Note: Go to “package.json” and set shortcut for tailwind
+
+
+
+ "scripts": {
+
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "tailwind": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch"
+
+  },

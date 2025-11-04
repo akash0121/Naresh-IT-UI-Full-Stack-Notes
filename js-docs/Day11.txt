@@ -1,0 +1,422 @@
+Boolean, Null & Undefined
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+Summary
+
+- Variables
+
+- Data Types
+
+- Primitive Types
+
+- Number Type
+
+       Number Methods
+
+- String Type
+
+       String Methods
+
+
+
+Boolean Type
+
+       - Boolean is used in decision making. 
+
+       - HTML provides various boolean attributes for elements, like          readonly, required, checked, selected, disabled, open etc.
+
+       - JavaScript uses them as properties for elements.
+
+
+
+       FAQ: What is difference between attribute & property?
+
+       Ans:  Attribute is immutable, it has a fixed value. 
+
+               Property is mutable, it can change dynamically. 
+
+
+
+       - Boolean properties are controlled by using “true” or “false” as values. 
+
+       - JavaScript can handle boolean true with 1 and false with 0, but it is not recommended. 
+
+
+
+       Syntax:
+
+                 var stock = true;
+
+                 if(stock==1)                // verifying true : not recommended 
+
+                 {
+
+                 }
+
+   
+
+                 if(stock==true)            // recommended 
+
+                 {
+
+                 }
+
+
+
+       - Boolean values are compared by using decision making operators.
+
+
+
+               ==                Equal
+
+               ===            Identical Equal / Strict Equal 
+
+               !=                Not Equal
+
+               !==            Not Identical
+
+               >                Greater than
+
+               >=                Greater than or equal
+
+               <                Lesser than
+
+               <=                Lesser than or equal
+
+               
+
+               &&            Logical AND
+
+               ||                Logical OR
+
+               !                NOT
+
+
+
+               ?:                Ternary Operator
+
+
+
+
+
+       FAQ: What is difference between “==“ & “===“ ?
+
+       Ans:   “==“ can compare values of two different data types.
+
+                “===“ can compare only values of same data types.
+
+
+
+                Syntax:
+
+                       10 == “10”           // true 
+
+                       10 === “10”         // false  
+
+
+
+                “===“ will always return false if it is comparing different data types. 
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+     <meta charset="UTF-8">
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <title>Document</title>
+
+     <script>
+
+          function VerifyName(){
+
+               var username = document.getElementById("txtName").value; 
+
+               var loginButton = document.querySelector("button");
+
+               if(username.length===0){
+
+                   loginButton.disabled = true;
+
+               } else {
+
+                    loginButton.disabled = false;
+
+               }
+
+          }
+
+     </script>
+
+</head>
+
+<body>
+
+     <dl>
+
+          <dt>User Name</dt>
+
+          <dd><input type="text" onkeyup="VerifyName()" id="txtName"></dd>
+
+     </dl>
+
+     <button disabled>Login</button>
+
+</body>
+
+</html>
+
+
+
+           FAQ: What is the role of ternary operator ?
+
+           Ans:   It is used to handle 3 operands, hence it is known as ternary. 
+
+
+
+                     (condition) ? statement_on_true : statement_on_false
+
+
+
+                     if (condition)
+
+                     {
+
+                         true;
+
+                     }
+
+                    else
+
+                     {
+
+                        false;
+
+                     }
+
+
+
+Ex: Toggle
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script>
+
+        function ToggleSort(){
+
+            var sortButton = document.getElementById("btnSort");
+
+            sortButton.className = (sortButton.className==="bi bi-sort-alpha-down")? "bi bi-sort-alpha-up": "bi bi-sort-alpha-down";
+
+        }
+
+        function ToggleShow(){
+
+            var showButton = document.getElementById("btnShow");
+
+            var image = document.querySelector("img");
+
+            showButton.textContent = (showButton.textContent==="Show")?"Hide":"Show";
+
+            image.style.display = (image.style.display==="none")?"block":"none";
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+     <button id="btnSort" onclick="ToggleSort()" class="bi bi-sort-alpha-down"></button>
+
+     <br><br>
+
+     <div>
+
+        <button id="btnShow" onclick="ToggleShow()">Show</button>
+
+        <br><br>
+
+        <img style="display: none;" src="../public/images/women-fashion.jpg" width="200" height="200">
+
+     </div>
+
+</body>
+
+</html>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function ToggleImage(){
+
+            var checkbox = document.getElementById("chkShow");
+
+            var img = document.querySelector("img");
+
+            var label = document.getElementById("lblShow");
+
+
+
+            label.textContent = (checkbox.checked===true)?"Hide Ads":"Show Ads";
+
+            img.style.display = (checkbox.checked===true)?"block":"none";
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+
+        <input type="checkbox" onchange="ToggleImage()" id="chkShow"> <label id="lblShow">Show Ads</label>
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <img style="display: none;" src="../public/images/women-fashion.jpg" width="200" height="200">
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+Undefined Type:
+
+       - It is a type defined for reference without value. 
+
+       - If value is not defined into any reference variable then it is set with “undefined” while
+
+         compiling or interpreting. 
+
+       - You can verify by using “undefined” keyword. 
+
+
+
+Syntax:
+
+           var  price;
+
+           if(price===undefined) { }                   // not good
+
+           if(price!==undefined) { }                // not good
+
+           if(price){ }                                      // Good : It returns true if value is defined. 
+
+
+
+Ex:
+
+<script>
+
+     var name = "Samsung TV";
+
+     var price;
+
+    
+
+     if(price)
+
+     {
+
+          document.write(`Name=${name}<br>Price=${price}`);
+
+     } else {
+
+         document.write(`Name=${name}`);
+
+     }
+
+</script>
+
+
+
+
+
+        FAQ: What is difference between undefined and not-defined?
+
+        Ans:  Undefined verifies the value, not-defined verifies the reference.
+
+
+
+Null Type:
+
+       - It refers to a value at runtime of application. 
+
+       - If value is not defined at runtime then it returns “null”. 
+
+       - You can verify by using “null” keyword. 
+
+
+
+Ex:
+
+<script>
+
+     var name = "Samsung TV";
+
+     var price = prompt("Enter Price");
+
+    
+
+     if(price!==null)
+
+     {
+
+          document.write(`Name=${name}<br>Price=${price}`);
+
+     } else {
+
+         document.write(`Name=${name}`);
+
+     }
+
+</script>
+Class comments

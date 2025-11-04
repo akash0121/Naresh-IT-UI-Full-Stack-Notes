@@ -1,0 +1,165 @@
+
+                                                      Bootstrap 
+
+- It is a powerful, extensible, rich featured front toolkit used to build interactive and responsive UI.
+
+- It provides components and grid system to create responsive designs. 
+
+- You can rapidly build interactive UI.
+
+
+Setup Bootstrap for project:
+
+
+
+1. Install following libraries
+
+
+
+           > npm   install bootstrap --save
+
+           > npm   install bootstrap-icons --save
+
+
+
+    Note: The latest version of bootstrap is “5”, it doesn’t require jQuery explicitly. 
+
+             Bootstrap versions upto 5 require jQuery. 
+
+           
+
+           > npm install jQuery --save         // not required for latest version
+
+
+
+2. Link the following files to webpage
+
+
+
+ <link rel=“stylesheet” href=“../node_modules/bootstrap-icons/font/bootstrap-icons.css”>
+
+ <link rel=“stylesheet” href=“../node_modules/bootstrap/dist/css/bootstrap.css”>
+
+ <script src=“../node_modules/bootstrap/dist/js/bootstrap.bundle.js”> </script>
+
+
+
+Bootstrap Classes 
+
+
+
+1. Box Model
+
+
+
+           Margins
+
+           .m-{size}            margin all directions size from 1 to 5. 
+
+           .ms-{ }                left margin [s=start]
+
+           .me-{ }                right margin [e-end]
+
+           .mx-{ }                left and right 
+
+           .mt-{ }                margin-top
+
+           .mb-{ }                margin-bottom 
+
+           .my-{ }                margin top and bottom 
+
+
+
+           Padding
+
+           .p-{size}
+
+           .ps-{ }
+
+           .pe-{ }
+
+           .px-{ }
+
+           .pt-{ }
+
+           .pb-{ }
+
+           .py-{ }
+
+
+
+           Border
+
+            .border                     base for border
+
+            .border-{size}    
+
+            .border-{contextual}        primary, secondary, danger, success, warning, info, dark ..
+
+
+
+           Border Radius    
+
+            .rounded 
+
+            .rounded-{size}
+
+            .rounded-circle
+
+            .rounded-pill
+
+
+
+           Width & Height
+
+            .w-{size}            25, 50, 75, 100
+
+            .h-{size}
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</head>
+
+<body>
+
+    <h1 class="border w-25 border-4 border-danger ms-4 mt-4 p-4">Bootstrap</h1>
+
+    <p class="m-4">Toolkit for building responsive UI.</p>
+
+    <img class="m-4 border border-4 border-danger rounded rounded-circle p-2" src="../public/images/women-fashion.jpg" width="100" height="100">
+
+    <dl class="border w-25 border-2 rounded rounded-4 border-success p-3 m-4">
+
+        <dt>Components</dt>
+
+        <dd>Navbar</dd>
+
+        <dd>Carousel</dd>
+
+        <dd>Modal</dd>
+
+    </dl>
+
+</body>
+
+</html>

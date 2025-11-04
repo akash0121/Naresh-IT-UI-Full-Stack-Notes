@@ -1,0 +1,389 @@
+Prompt and Form Input
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Oct 27
+1. Query String
+
+       location.search
+
+       URLSearchParams()
+
+
+
+2. prompt()
+
+       - It is an input box of browser window. 
+
+       - It allows user to input a value. 
+
+
+
+Syntax:
+
+            prompt(“message”, “default_value”);         // default value is optional 
+
+
+
+       - Prompt returns the following 
+
+
+
+                  null            :    on cancel
+
+                  ‘  ’            :    empty string on OK without value
+
+                  ‘value’    :    returns value on OK with value
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function SearchClick(){
+
+          result =  prompt("Search Products", "eg: shoes, jeans");
+
+          if(result==null) {
+
+              alert("You canceled search");
+
+          }
+
+          else if(result=='') {
+
+                alert('Please provide a product name');
+
+          } else {
+
+              document.querySelector("p").textContent = "You are searching for :" + result;
+
+          }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="SearchClick()">Search</button>
+
+    <p></p>
+
+</body>
+
+</html>
+
+
+
+
+
+3. Form Input Elements
+
+       - HTML form provides various input elements like textbox, password, checkbox, radio
+
+         dropdown, listbox etc.
+
+       - JavaScript can access input value from form elements and use in application.
+
+
+
+Syntax:
+
+               <input type=“text”  id=“userName”>
+
+               <select  id=“list”> 
+
+                 <option> </option>
+
+               </select>
+
+
+
+               document.getElementById(“userName”).value 
+
+               document.getElementById(“list”).value
+
+
+
+Ex: 
+
+1. Src/scripts/inox.js
+
+
+
+
+
+function BookClick(){
+
+     document.getElementById("summaryContainer").style.display = "block";
+
+     document.getElementById("buttonContainer").style.display = "none";
+
+
+
+     document.getElementById("lblMovie").textContent = document.getElementById("lstMovies").value;
+
+     document.getElementById("lblDate").textContent = document.getElementById("lstDate").value;
+
+     document.getElementById("lblCinema").textContent = document.getElementById("lstCinema").value;
+
+     document.getElementById("lblTiming").textContent = document.getElementById("lstTiming").value; 
+
+
+
+     poster = document.getElementById("imgPoster");
+
+     movieName = document.getElementById("lstMovies").value; 
+
+
+
+     if(movieName=="THAMMA") {
+
+         poster.src = "../public/images/thamma.png";
+
+     } else {
+
+        poster.src = "../public/images/llb.png"
+
+     }
+
+
+
+}
+
+function ModifyClick(){
+
+    document.getElementById("lblBooking").textContent = "Modify Booking";
+
+    document.getElementById("btnBook").textContent = "Save";
+
+    document.getElementById("btnBook").className = "btn btn-success";
+
+}
+
+
+
+2. Js-examples/inox.html
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inox</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <script src="../src/scripts/inox.js"></script>
+
+</head>
+
+<body class="container-fluid">
+
+    <div id="buttonContainer">
+
+        <button data-bs-target="#booking" data-bs-toggle="modal" class="btn btn-primary mt-2">Quick Booking</button>
+
+    </div>
+
+    <div class="modal fade" id="booking">
+
+        <div class="modal-dialog modal-fullscreen">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h4 id="lblBooking">Quick Booking</h4>
+
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="d-flex p-2 justify-content-between">
+
+                        <div>
+
+                            <select class="form-select" id="lstMovies">
+
+                                <option>Select Movie</option>
+
+                                <option>THAMMA</option>
+
+                                <option>JOLLY LLB3</option>
+
+                            </select>
+
+                        </div>
+
+                        <div>
+
+                            <select class="form-select" id="lstDate">
+
+                                <option>Select Date</option>
+
+                                <option>Today, 27 OCT</option>
+
+                                <option>Tomorrow, 28 OCT</option>
+
+                            </select>
+
+                        </div>
+
+                        <div>
+
+                            <select class="form-select" id="lstCinema">
+
+                                <option>Select Cinema</option>
+
+                                <option>PVR - Ameerpet</option>
+
+                                <option>INOX - B'hills</option>
+
+                            </select>
+
+                        </div>
+
+                        <div>
+
+                            <select class="form-select" id="lstTiming">
+
+                                <option>Select Timing</option>
+
+                                <option>10:30 AM</option>
+
+                                <option>10:40 PM</option>
+
+                            </select>
+
+                        </div>
+
+                        <div>
+
+                            <button onclick="BookClick()" id="btnBook" data-bs-dismiss="modal" class="btn btn-primary">Book</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="w-25" id="summaryContainer" style="display: none;">
+
+        <h3 class="bi bi-ticket-detailed"> Booking Summary</h3>
+
+        <img width="100%" id="imgPoster" height="200">
+
+        <dl class="row mt-2">
+
+            <dt class="col-3">Movie</dt>
+
+            <dd class="col-9" id="lblMovie"></dd>
+
+            <dt class="col-3">Date</dt>
+
+            <dd class="col-9" id="lblDate"></dd>
+
+            <dt class="col-3">Cinema</dt>
+
+            <dd class="col-9" id="lblCinema"></dd>
+
+            <dt class="col-3">Timing</dt>
+
+            <dd class="col-9" id="lblTiming"></dd>
+
+        </dl>
+
+        <button onclick="ModifyClick()" data-bs-target="#booking" data-bs-toggle="modal" class="btn btn-warning w-100 mt-2">Modify Booking</button>
+
+        <a href="./inox.html" class="btn btn-danger m-2 w-100"> Cancel Booking </a>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+
+Summary 
+
+1. Output
+
+       alert()
+
+       confirm()
+
+       document.write()
+
+       innerText
+
+       textContent
+
+       innerHTML
+
+       outerHTML
+
+2. Input
+
+       Query String
+
+       prompt()
+
+       Form Input Elements
+
+
+
+
+
+JavaScript Language:
+
+1. Variables
+ 
+2. Data Types
+
+3. Operators
+
+4. Statements 
+
+5. Functions 
+
+6. Object Based Programming

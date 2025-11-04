@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trim example</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function verifyPassword(){
+
+            var password = document.getElementById("password").value;
+            var lblpwd = document.getElementById("lblpwd");
+            var meter = document.querySelector("meter");
+            var regExp = /(?=.*[A-Z])\w{4,15}/;
+
+            if(password.length==0){
+                lblpwd.innerHTML = "Password Require".fontcolor('red');
+                meter.value = 0;
+            }else{
+               if(password.match(regExp)){
+                lblpwd.innerHTML = "Strong Password".fontcolor('green');
+                meter.value = 100;
+               }
+               else{
+                if(password.length < 4 ){
+                    lblpwd.innerHTML = 'Poor Password'.fontcolor('red');
+                    meter.value = 40;
+                }
+                else{
+                    lblpwd.innerHTML = 'Weak Password'.fontcolor('golden');
+                    meter.value = 75;
+                }
+               }
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Enter your password</dt>
+        <dd><input type="text" id="password" class="form-control" onkeyup="verifyPassword()"></dd>
+        <dd><meter value="0" min="1" max="100" style="width: 100%; height: 30px;"></meter></dd>
+        <label for="" id="lblpwd"></label>
+    </dl>
+</body>
+</html>

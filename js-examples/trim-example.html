@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trim example</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function verifyPassword(){
+
+            var password = document.getElementById("password").value;
+            var lblpwd = document.getElementById("lblpwd");
+            if(password.trim()=="admin"){
+                lblpwd.innerHTML = "Password Verify Succesfully".fontcolor('green').fontsize('4');
+            }else{
+                lblpwd.innerHTML = "Invalid Password".fontcolor('red').fontsize('4');
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Enter your password</dt>
+        <dd><input type="text" id="password" class="form-control"></dd>
+        <label for="" id="lblpwd"></label>
+        <button class="btn btn-secondary" onclick="verifyPassword()">Verify Password</button>
+    </dl>
+</body>
+</html>

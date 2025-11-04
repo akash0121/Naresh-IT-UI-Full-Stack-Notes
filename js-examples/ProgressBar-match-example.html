@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trim example</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function verifyPassword() {
+
+            var password = document.getElementById("password").value;
+            var lblpwd = document.getElementById("lblpwd");
+            var progressBar = document.getElementById("Progress-Bar");
+            var regExp = /(?=.*[A-Z])\w{4,15}/;
+
+            if (password.length == 0) {
+                lblpwd.innerHTML = "Password Require".fontcolor('red');
+                progressBar.style.width = "0%";
+            } else {
+                if (password.match(regExp)) {
+                    lblpwd.innerHTML = "Strong Password".fontcolor('white');
+                    progressBar.style.width = "100%";
+                    progressBar.className = "progress-bar bg-success progress-bar-striped progress-bar-animated";
+                }
+                else {
+                    if (password.length < 4) {
+                        lblpwd.innerHTML = 'Poor Password'.fontcolor('white');
+                        progressBar.style.width = "40%";
+                        progressBar.className = "progress-bar bg-danger progress-bar-striped progress-bar-animated";
+                    }
+                    else {
+                        lblpwd.innerHTML = 'Weak Password'.fontcolor('white');
+                        progressBar.style.width = "70%";
+                        progressBar.className = "progress-bar bg-warning progress-bar-striped progress-bar-animated";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <dl>
+        <dt>Enter your password</dt>
+        <dd><input type="text" id="password" class="form-control" onkeyup="verifyPassword()"></dd>
+        <dd class="progress" id="Progress-Bar">
+            <span style="color: white;" id="lblpwd"></span>
+        </dd>
+    </dl>
+</body>
+
+</html>

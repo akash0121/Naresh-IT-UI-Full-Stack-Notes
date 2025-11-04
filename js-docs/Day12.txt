@@ -1,0 +1,146 @@
+Non Primitive Types
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+6:47 PM
+Summary 
+
+- Number
+
+- String
+
+- Boolean
+
+- Undefined 
+
+- Null
+
+- Symbol
+
+- Big Int
+
+
+
+Non Primitive Types
+
+   - They are mutable types.
+
+   - They don’t have a fixed range for value.
+
+   - Value range changes according to memory available. 
+
+   - They are stored in a heap memory. 
+
+   - Heap memory can be accessed in any order. 
+
+
+
+1. Array 
+
+       - Arrays are used in computer programming to reduce overhead and complexity.
+
+       - Arrays can reduce overhead by storing values in a sequential order.
+
+       - Arrays can reduce complexity by storing multiple values under one reference name.
+
+       - Array can handle various types of data in a sequence, however few languages can’t
+
+         manage various types, hence they restrict array to same data type.
+
+       - Array size can change dynamically, which is again restricted in few languages. 
+
+       - Array refers to a sequence that allows to access in random. 
+
+         [ keyboard is having an array of keys ]
+
+
+
+Configuring Array:
+
+       - Array configuration requires declaration by using “var” & let” and initialization by using
+
+         “const”. 
+
+       - It will have a keyword and reference name.
+
+
+
+                       var   collection;
+
+                       var   categories;
+
+                       let    products;
+
+
+
+        - Array requires memory allocation for handling multiple values. 
+
+        - Memory can be allocated by using 2 techniques
+
+                       a) Array meta character [ ]
+
+                       b) Array constructor       Array()
+
+
+
+        - You can initialize or assign memory
+
+
+
+                       var categories;                           categories = [ ];            // assignment of memory
+
+
+
+                       var categories = [ ];      // initialization of memory 
+
+
+
+                                               (or)
+
+
+
+                       var categories;
+
+                       categories = new Array();      // assignment of memory
+
+
+
+                       var categories = new Array(); // initialization of memory
+
+
+
+
+
+   FAQ: What is difference between meta character [ ] & Array() constructor?
+
+   Ans:  Meta character “[ ]” configures static memory. It is continuous memory. 
+
+           Array() constructor configures dynamic memory. It is discrete memory. 
+
+
+
+   FAQ: What is “new” ?
+
+   Ans: It is dynamic memory allocation operator. 
+
+           Memory is newly allocated for every request. 
+
+
+
+Handling Data in Array:
+
+       - You can store and read values from array memory by using a property that maps to
+
+          its index number.
+
+       - Property is a string type that can handle any type of value. 
+
+       
+
+Syntax:
+
+           var collection = [ ];
+
+           collection[0] = 10;         
+
+           collection[“1”] = 20;       // ok  “1” is a property maps to 1 index in memory
+Class comments

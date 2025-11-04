@@ -1,0 +1,283 @@
+JavaScript Variables
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+Variables
+
+ - Variables are storage locations in memory, where you can store a value and use it as a part of any expression. 
+
+ - Variable configuration comprises of 
+
+   
+
+               keyWord     variableName  =  value;
+
+
+
+ - “KeyWord” defines the behaviour of variable. 
+
+ - Using a keyword for variable is not mandatory if JavaScript is not in strict mode. 
+
+ - JavaScript variables are configured using following keywords
+
+           a) var
+
+           b) let 
+
+           c) const 
+
+ - Variable configuration comprises of 3 phases 
+
+           a) Declaration
+
+           b) Assignment 
+
+           c) Initialization 
+
+ - Declaration comprises of keyword and variable name.
+
+       
+
+           var price; 
+
+
+
+  - Assignment is the process of assigning a value into variable after declaring. 
+
+
+
+            var price;            // declaring 
+
+            price=4500;        // assigning 
+
+
+
+  - Initialization is the process of configuring a value into variable while declaring.
+
+
+
+            var price = 45000;    // initialization 
+
+            price = 56000;          // assignment 
+
+
+
+FAQ: What is difference between var, let & const? 
+
+Ans:
+
+   var:
+
+           - It configures a function scope variable. 
+
+           - A function scope variable can be declared in any block of a function and can be 
+
+             accessed from any another block in the same function. 
+
+           - It allows declaring, assignment and initializaiton.
+
+           - It allows shadowing.
+
+           - Shadowing is the process of re-declaring or re-initializing same name identifier within
+
+             the scope. 
+
+
+
+                       {
+
+                           var y;          // declaring 
+
+                           y = 10;        // assigning 
+
+                           y = 20;        // assigning 
+
+                           var y = 30; // shadowing 
+
+                       }                          
+
+Ex:
+
+<script>
+
+    function f1()
+
+    {
+
+        var x;          // declaring
+
+        x = 10;         // assigning 
+
+        if(x==10){
+
+            var y = 20; //initialization
+
+            y = 30;
+
+            var y = 40;    // shadowing 
+
+        }
+
+        document.write("X=" + x + "<br>Y=" + y);
+
+    }
+
+    f1();
+
+</script>
+
+
+
+               - It allows Hoisting. 
+
+               - It allows to use and declare variables without any order dependency. 
+
+Ex:
+
+<script>
+
+    "use strict";
+
+    function f1()
+
+    {
+
+        x = 10;
+
+        document.write("x=" + x);
+
+        var x;  // hoisting
+
+    }
+
+    f1();
+
+</script>
+
+
+
+   let:
+
+       - It is used to configure a block scope variable. 
+
+       - Block scope allows to access in the same block and in its inner blocks. 
+
+       - This mechanism is known as “Closure”.
+
+       - It allows declaring, assignment and initialization. 
+
+       - It will not allow shadowing & hoisting. 
+
+Ex:
+
+<script>
+
+    "use strict";
+
+    function f1()
+
+    {
+
+        let x;   // declaring
+
+        x = 10;  // assigning 
+
+        if(x==10){
+
+            let y = 20;  // initialization
+
+            y = 30; // assigning
+
+            document.write("X=" + x + "<br>Y=" + y);
+
+        }
+
+        
+
+    }
+
+    f1();
+
+</script>
+
+
+
+   const:     
+
+       - It configures a block scope variable. 
+
+       - It allows only initialization. 
+
+       - It will not allow declaring and assigning. 
+
+       - It will not allow shadowing and hoisting. 
+
+   
+
+   Syntax:
+
+           const x;        // invalid     initialization missing 
+
+           
+
+           const x = 10;
+
+           x = 20;         // invalid     can’t assign to a constant 
+
+
+
+   Note: Constant is not readonly. A constant keeps the value constant across multiple requests.
+    However it can change using re-initialization. 
+
+
+
+ Global Variable:
+
+   - Global scope defines a module scope, which is accessible to all functions. 
+
+   - You can configure a global variable using var, let or const. 
+
+   - You can define a variable inside function and make it global in access by using “window”
+
+      object of browser. 
+
+   - It is possible only when JavaScript is used with BOM. [Browser Object Model]
+
+
+
+Ex:
+
+<script>
+
+    "use strict";
+
+    var x = 10;
+
+    let y = 20;
+
+    const z = 30;
+
+    function f1()
+
+    {
+
+        window.a=40;
+
+        document.write("f1 x=" + x + "y=" + y + "z=" + z + "a=" + a + "<br>");
+
+    }
+
+    function f2()
+
+    {
+
+        document.write("f2 x=" + x + "y=" + y + "z=" + z + "a=" + a + "<br>");
+
+    }
+
+    f1();
+
+    f2();
+
+</script>
+Class comments

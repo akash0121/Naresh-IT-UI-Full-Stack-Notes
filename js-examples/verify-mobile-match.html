@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Mobile</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function CountryChange(){
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h2 class="text-center">Verify Mobile Number</h2>
+    <dl class="w-50">
+        <dt>Your Country</dt>
+        <dd class="input-group">
+            <select onchange="CountryChange()" class="form-select" id="lstCountries">
+                <option>Select Country</option>
+                <option>India</option>
+                <option>US</option>
+                <option>UK</option>
+            </select>
+            <img class="input-group-text" width="60" height="40">
+        </dd>
+        <dt>Your Mobile Number</dt>
+        <dd><input type="text" class="form-control" id="txtMobile"></dd>
+        <div>
+            <button class="btn btn-warning">Verify Number</button>
+        </div>
+    </dl>
+</body>
+</html>

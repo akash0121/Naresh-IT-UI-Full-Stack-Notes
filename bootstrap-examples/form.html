@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form in the Bootstrap</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="p-2 d-flex justify-content-center">
+    <form class="border bg-dark text-white border-secondary w-25 rounded rounded-3 border-1 shadow-lg p-4">
+        <div class="bi bi-person-circle fs-4 fw-bold"></div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">User Name</label>
+            <div>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold">Password</label>
+            <div>
+                <input type="Password" class="form-control">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label"></label>
+            <select class="form-select">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <div>
+                <input type="radio" class="form-check-input" name="gender">
+                <label for="" class="form-check-label">Male</label>
+                <input type="radio" class="form-check-input" name="gender">
+                <label for="" class="form-check-label">Female</label>
+            </div>
+        </div>
+
+         <div class="mb-2">
+
+            <label>Range</label>
+
+            <div>
+
+                <input type="range" class="form-range">
+
+            </div>
+
+        </div>
+
+        <div class="mb-3 form-switch">
+
+           <input type="checkbox" class="form-check-input"> <label class="form-check-label">Subscribe</label>
+
+        </div>
+
+        <div>
+
+            <button class="btn btn-warning w-100">Register</button>
+
+        </div>
+    </form>
+</body>
+</html>

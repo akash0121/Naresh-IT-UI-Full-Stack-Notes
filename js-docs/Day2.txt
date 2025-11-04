@@ -1,0 +1,373 @@
+Evolution of JavaScript
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+
+• Yesterday
+
+- What is JavaScript?
+
+       Interpreted 
+
+       Compiled
+
+       JIT
+
+       AOT
+
+- What is role of JavaScript Client Side?
+
+       DOM
+
+       BOM
+
+       Validations
+
+Evolution of JavaScript:
+
+   - CERN (Council for European Research and Nuclear) labs developed a script called “ECMA Script” for  “Mosaic” browser.
+
+   - Netscape Communications started a browser called “Netscape Navigator”. 
+
+   - Netscape appointed “Brendan Eich” for developing a script for their browser. 
+
+   - He designed a script by name “Mocha”, later renamed as “Live Script”.
+
+   - Netscape given the responsibility of Live Script to “Sun Microsystems”.
+
+   - Sun Microsystems and Netscape together renamed Live Script as “JavaScript”. 
+
+   - Netscape communications stopped its services in early 2000. 
+
+   - Netscape given the responsibility of JavaScript to “ECMA” community. 
+
+   - Latest JavaScript ECMA Edition is 16 [June 2025].
+
+   - The most popular versions used in various technologies
+
+               a) ECMAScript 2016    ES6
+
+               b) ECMAScript 2017      ES7  etc.
+
+               Latest is ES16 [ECMAScript 2016 June 2025]
+
+
+
+Issues with JavaScript:
+
+   - It is not a strongly typed language.
+
+             x = 10;        // number
+
+             x = “A”;   // valid 
+
+
+
+   - It is not implicitly strictly typed language. 
+
+
+           * Strict refers to standards of coding.
+
+           * It is required for reducing code in-consistency 
+
+           * JavaScript requires explicit strict mode to turn on.
+
+              “use strict”
+
+       
+
+   - It is not an OOP [Object Oriented] language, It is Object Based. 
+
+           
+
+           * Code level security issues.
+
+           * Extensibility issues.
+
+
+
+Note: TypeScript is an alternative for JavaScript, but not replacement. 
+
+
+
+         Developer Writes in TypeScript => Translated into JavaScript => Browser use JavaScript.
+
+
+
+JavaScript Integration
+
+   - You can add JavaScript into Web page using 3 techniques
+
+   
+
+   1. Inline
+
+   2. Embedded 
+
+   3. External File 
+
+
+
+Inline
+
+   - JavaScript function can be defined inside any element.
+
+   - It is faster in interactions.
+
+   - It can’t be reused across various requests or elements. 
+
+
+
+Syntax:
+
+       <button onclick=“function(){}”>  
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <h2>Ticket</h2>
+
+    <button onclick="window.print()">Print</button>
+
+</body>
+
+</html>
+
+
+
+Embedded 
+
+   - JavaScript functions can be defined in  <script> container.
+
+   - You can embed <script> in head or body section.
+
+   - Script in head will save round trip. 
+
+   - It is easy to reuse, with in the page. 
+
+
+
+Syntax:
+
+       <head>
+
+           <script>
+
+               … function …
+
+           </script>
+
+       </head>
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function PrintPage(){
+
+            window.print();
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Ticket</h2>
+
+    <button onclick="PrintPage()">Print</button>
+
+</body>
+
+</html>
+
+
+
+   - JavaScript comprises of various MIME types
+
+
+
+               text/javascript             for interpreter in browser 
+
+               module                         for ES Module system in browser 
+
+               text/babel                      for babel as compile 
+
+
+
+   Note: The default is “text/javascript” 
+
+
+
+Syntax:
+
+               <script type=“text/javascript”>
+
+
+
+               </script>
+
+
+
+       - JavaScript requires strict mode to turn on explicitly by using “use strict”.
+
+
+
+               <script type=“text/javascript”>
+
+                   “use strict”;
+
+   
+
+                    … functions ….
+
+
+
+               </script>
+
+   
+
+       - JavaScript code can be targeted to legacy browsers by enclosing in HTML comments.
+
+
+
+               <!--
+
+                   .. function ..
+
+               -->
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script type="text/javascript">
+
+        "use strict";
+
+        <!--
+
+         function PrintPage(){
+
+            window.print();
+
+        }    
+
+        -->
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Ticket</h2>
+
+    <button onclick="PrintPage()">Print</button>
+
+</body>
+
+</html>
+
+
+
+External File
+
+       - JavaScript functions can be defined in a separated script file with extension “.js” 
+
+       - You can reuse across multiple pages. 
+
+       - Using an external file will increase the number of request and also page load time. 
+
+       - You can minify the JavaScript file and use for production. 
+
+
+
+Ex:
+
+1. Src/scripts/print.js
+
+
+
+       "use strict";
+
+function PrintPage(){
+
+    window.print();
+
+}
+
+
+
+2. Js-examples/home.html
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="../src/scripts/print.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <h2>Ticket</h2>
+
+    <button onclick="PrintPage()">Print</button>
+
+</body>
+
+</html>
