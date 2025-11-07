@@ -1,0 +1,30 @@
+<script>
+
+        var collection = [10, 20, true, "Akash", ["Delhi", "Hydrabad"], function() { }];
+
+        document.write(`this is the length property ${collection.length} <br>`);
+
+        document.write(`This is the toString Function of the array ${collection.toString()} <br>`)
+
+        document.write(`This is the join function ${collection.join(" ")} <br>`)
+
+        document.write(`${collection.forEach(function(value,index){document.write(`${value} <br>`)})}`)
+
+         document.write(`${collection.map(function(value,index){document.write(`${value} <br>`)})}`)
+
+
+         for(var property in collection){
+            document.write(`${property} <br>`)
+         }
+
+         for(var value of collection){
+            document.write(`${value} <br>`)
+         }
+
+
+         document.write(`${collection.slice(1,4)} <br>`)
+
+         document.write(`${collection.find(function(value,index){ return value === "Akash"; })} <br>`)
+
+
+    </script>

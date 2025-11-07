@@ -1,0 +1,524 @@
+Array methods
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+6:42 PM
+5. Adding elements into array
+
+       
+
+           push()            It adds new element(s) as last item(s).
+
+           unshift()        It adds new element(s) as first item(s).
+
+           splice()            It adds new element(s) at specific position. 
+
+
+
+   Syntax:
+
+           collection.push(“item1”, “item2”, …)
+
+           collection.unshift(“item1”, “item2”, …)
+
+           collection.splice(startIndex, deleteCount, “item1”, “item2”, …)
+
+           [delete count must be zero, if you want to add without removing existing]
+
+
+
+Ex:
+
+<script>
+
+     var categories = ["Fashion", "Footwear"];
+
+
+
+     categories.push("Electronics");
+
+     categories.unshift("All");
+
+     categories.splice(2,0,"Accessories");
+
+
+
+     categories.map(function(value, index){
+
+         document.write(`[${index}] : ${value}<br>`);
+
+     })
+
+    
+
+</script>
+
+
+
+
+
+6. Removing elements from array
+
+
+
+           pop()                It removes and returns the last item.
+
+           shift()            It removes and returns the first item.
+
+           splice()            It removes and returns specific item(s).
+
+
+
+Syntax:
+
+           collection.pop();
+
+           collection.shift();
+
+           collection.splice(startIndex, deleteCount)
+
+
+
+Ex:
+
+<script>
+
+     var categories = ["Fashion", "Footwear"];
+
+
+
+
+
+     function PrintCollection(){
+
+            categories.map(function(value, index){
+
+            document.write(`[${index}] : ${value}<br>`);
+
+        })
+
+     }
+
+
+
+     categories.push("Electronics");
+
+     categories.unshift("All");
+
+     categories.splice(2,0,"Accessories");
+
+
+
+     PrintCollection();
+
+     
+
+     document.write("<hr>");
+
+
+
+     console.log(categories.pop());
+
+     console.log(categories.shift());
+
+     console.log(categories.splice(1,1));
+
+     PrintCollection();
+
+    
+
+</script>
+
+
+
+7. Sorting array elements
+
+
+
+       sort()                It arranges elements in ascending order.
+
+                           It uses a string format for sorting. 
+
+
+
+       reverse()        It arranges elements in reverse order. 
+
+
+
+Ex:
+
+<script>
+
+     var categories = ["D", "C", "A", "B"];
+
+
+
+
+
+     function PrintCollection(){
+
+            categories.map(function(value, index){
+
+            document.write(`[${index}] : ${value}<br>`);
+
+        })
+
+     }
+
+     categories.sort().reverse();
+
+
+
+     PrintCollection();
+
+    
+
+</script>
+
+
+
+Dynamically presenting elements in UI:
+
+   
+
+   1. Create element dynamically by using document method “createElement()”.
+
+
+
+               document.createElement(“img”)
+
+               document.createElement(“ol”)
+
+               document.createElement(“input”) … 
+
+
+
+   2. Assign a memory reference for elements in dynamic memory. 
+
+
+
+               var  pic  = document.createElement(“img”);
+
+               var  input = document.createElement(“input”);
+
+
+
+   3. Set properties for elements
+
+
+
+               pic.src = “ ”;
+
+               pic.alt = “ ”;
+
+               
+
+               input.type = “password | number | range | checkbox..”;
+
+
+
+   4. Add element into UI by using the document method “appendChild()”.
+
+
+
+               appendChild()        It is used to add a child element into specific parent. 
+
+
+
+               document.querySelector(“body”).appendChild(pic);
+
+               document.querySelector(“form”).appendChild(input);
+
+
+
+Ex:    
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+
+        function UploadClick(){
+
+            var img = document.createElement("img");
+
+            img.src = "../public/images/women-fashion.jpg";
+
+            img.width = "100";
+
+            img.height = "100";
+
+
+
+            document.getElementById("container").appendChild(img);
+
+        }
+
+        function bodyload(){
+
+             var header = document.createElement("header");
+
+             var nav = document.createElement("nav");
+
+             var brandName = document.createElement("h3");
+
+             brandName.textContent = "Amazon";
+
+
+
+             nav.appendChild(brandName);
+
+             header.appendChild(nav);
+
+             document.querySelector("body").appendChild(header);
+
+        }
+
+    </script>
+
+    <style>
+
+        header {
+
+            border:1px solid black;
+
+        }
+
+        nav {
+
+            background-color: yellow;
+
+        }
+
+    </style>
+
+</head>
+
+<body onload="bodyload()">
+
+    <button onclick="UploadClick()">Upload Image</button>
+
+    <br><br>
+
+    <div id="container">
+
+        
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+
+
+    <script>
+
+        var categories = ["All", "Kids Fashion", "Footwear", "Electronics"];
+
+        function bodyload(){
+
+
+
+                categories.map(function(category){
+
+
+
+                     var option = document.createElement("option");
+
+                     option.text = category;
+
+
+
+                     document.querySelector("select").appendChild(option);
+
+
+
+                     var li = document.createElement("li");
+
+                     li.textContent = category;
+
+
+
+                     document.querySelector("ol").appendChild(li);
+
+
+
+
+
+                     var input = document.createElement("input");
+
+                     input.type = "checkbox";
+
+
+
+                     var label = document.createElement("label");
+
+                     label.textContent = category;
+
+
+
+                     var div = document.createElement("div");
+
+                     div.appendChild(input);
+
+                     div.appendChild(label);
+
+
+
+                     document.querySelector("form").appendChild(div);
+
+
+
+                     var anchor = document.createElement("a");
+
+                     anchor.textContent = category;
+
+                     anchor.href = `${category}.html`;
+
+
+
+                     document.querySelector("nav").appendChild(anchor);
+
+
+
+                     var tbody = document.createElement("tbody");
+
+                     var tr = document.createElement("tr");
+
+                     var td = document.createElement("td");
+
+                     td.textContent = category;
+
+
+
+                     var tdAction = document.createElement("td");
+
+                     tdAction.innerHTML = `
+
+                       <button class="bi btn btn-primary bi-eye-fill"></button>
+
+                       <button class="bi btn btn-warning bi-pen-fill"></button>
+
+                       <button class="bi btn btn-danger bi-trash-fill"></button>
+
+                     `;
+
+
+
+                     tr.appendChild(td);
+
+                     tr.appendChild(tdAction);
+
+                     tbody.appendChild(tr);
+
+                     document.querySelector("table").appendChild(tbody);
+
+
+
+
+
+
+
+                })
+
+
+
+        }
+
+    </script>
+
+    <style>
+
+        nav a {
+
+            margin-left: 30px;
+
+            margin-right: 30px;
+
+        }
+
+        nav {
+
+            padding: 20px;
+
+            border:1px solid gray;
+
+        }
+
+    </style>
+
+</head>
+
+<body onload="bodyload()" class="container-fluid p-3">
+
+    <header class="p-3 border border-primary border-3 mb-3">
+
+        <nav></nav>
+
+    </header>
+
+    <select class="form-select w-25"></select>
+
+    <ol>
+
+
+
+    </ol>
+
+    <form>
+
+
+
+    </form>
+
+    <table class="table table-hover w-25">
+
+        <thead>
+
+            <tr>
+
+                <th>Categories</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+    </table>
+
+</body>
+
+</html>
+Class comments

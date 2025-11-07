@@ -1,0 +1,382 @@
+Array Manipulation
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+Summary
+
+- What is Array?
+
+- What is overhead?
+
+- Configuring Array
+
+- Array Property & Index
+
+- Difference between meta character [ ] & Array()
+
+
+
+Data in Array
+
+   - Array is a memory allocated for handling collection. 
+
+   - You can store any type of data in array memory 
+
+           a) Primitive
+
+           b) Non Primitive 
+
+           c) Function
+
+   - A function can be defined in array memory. 
+
+   - Function in memory doesn’t require a name. 
+
+   - Function without name is known as “Anonymous” function.
+
+   - Anonymous functions are accessed by using IIFE pattern.
+
+     [ Immediately Invoking Function Expression ]
+
+   
+
+Syntax:
+
+       var collection = [ 10, “A”,  true, [  ],  function(){ } ];
+
+       collection[4]();      // IIFE
+
+Ex:
+
+<script>
+
+     var collection = [10, "A", true, ['Delhi', 'Hyd'], function(){document.write('Hello ! from Array')}];
+
+     document.write(collection[3][1] + "<br>");
+
+     collection[4]();
+
+</script>
+
+
+
+Ex:
+
+<script>
+
+     var collection = [[10, 20],[[30, 40], ['Delhi', 'Hyd']]];
+
+
+
+     document.write(collection[1][1][1]);
+
+     
+
+</script>
+
+
+
+
+
+Array Destructure :
+
+       - It is a technique of separating elements of array and storing in individual references.
+
+       - JS earlier versions use index based access.
+
+       
+
+                   var collection = [ 10, 20 ];
+
+                   var a = collection[0];
+
+                   var b = collection[1];
+
+
+
+       - JS ES6+ versions use de-structuring technique. 
+
+   
+
+                   var collection = [ 10, 20 ];
+
+                   var [a, b] = collection;
+
+Ex:
+
+<script>
+
+     var collection = [['Delhi','Hyd'], ['Samsung TV', 'iPhone 16 Pro']];
+
+     var [cities, products] = collection;
+
+     var [tv, mobile] = products;
+
+     document.write(cities + "<br>");
+
+     document.write(mobile);
+
+     
+
+</script>
+
+
+
+Spread Operator with Arrays:
+
+    - It is a new operator from ES6+ version of JS.
+
+    - It is used to spread the elements of an array into individual reference and copy into a new
+
+      array. 
+
+
+
+Syntax:
+
+           var list1 = [10, 20]
+
+           var list2 = [list1];           // list2 contains 1 element.
+
+           var list2 = […list1];          // list2 contains 2 elements.
+
+
+
+                                                Array Manipulation
+
+
+
+1. length            : It is a property that returns the total count of elements in array. 
+
+ 
+
+Syntax:
+
+       var collection = [10, 20, 30, 40] ;
+
+       collection.length;            // 4
+
+
+
+2. Methods used for reading all elements form array
+
+
+
+       toString()                : It returns all array elements separated with “,” delimiter.
+
+       join()                    : It returns all array elements separated with custom delimiter. 
+
+
+
+Syntax:
+
+           collection.toString();          // 10, 20, 30, 40
+
+           collection.join( ‘ / ‘ );         //   10 / 20 / 30 / 40
+
+
+
+Ex:
+
+<script>
+
+    var categories = ["Mobiles", "Fashion", "Footwear"];
+
+    document.write(categories.toString() + "<br>");
+
+    document.write(categories.join(' / '));
+
+</script>
+
+
+
+
+
+
+
+       forEach()                : It uses a callback function to read every element and its index
+
+                                     in sequential order [one by one]. It reads using a synchronous 
+
+                                     technique. 
+
+
+
+       map()                    : It is similar to forEach but uses asynchronous technique.
+
+
+
+Syntax:
+
+
+
+        collection.forEach(function(value, index){ 
+
+
+
+       })
+
+
+
+       collection.map(function(value, index) { 
+
+
+
+       })
+
+
+
+       Index is optional. 
+
+
+
+Ex:
+
+<script>
+
+    var categories = ["Mobiles", "Kids Fashion", "Women Fashion", "Footwear"];
+
+    categories.forEach(function(value, index){
+
+          document.write(`[${index}] ${value}<br>`);
+
+    })
+
+    categories.map(function(value){
+
+       document.write(`<li>${value}</li>`);
+
+    })
+
+</script>
+
+
+
+
+
+
+
+FAQ: What is difference between Synchronous & Asynchronous?
+
+Ans:   Synchronous is a blocking technique where other tasks are blocked while performing 
+
+          the specified task.
+
+         Asynchronous is unblocking technique where other tasks are executed in background
+
+         while performing the specified task.
+
+
+
+3. Explicit techniques used for reading all elements from array
+
+
+
+       for..in                It is used to read all properties from an array.
+
+
+
+       for..of                It is used to read all values from an array.
+
+
+
+       
+
+Syntax:
+
+           for (var  property  in  collection)            {
+
+           }
+
+
+
+           for (var value of collection)
+
+           {
+
+           }
+
+
+
+Ex:
+
+<script>
+
+    var categories = ["Mobiles", "Kids Fashion", "Women Fashion", "Footwear"];
+
+    for(var property in categories){
+
+        document.write(`[${property}] ${categories[property]} <br>`);
+
+    }
+
+    for(var value of categories){
+
+      document.write(`<li>${value}</li>`);
+
+    }
+
+</script>
+
+
+
+
+
+4. Methods used for reading specific element(s)
+
+
+
+           slice()                : It can read elements between specified index.
+
+
+
+           find()                    : It can read and return the first occurrence element that matches
+
+                                     given condition. 
+
+
+
+           filter()                : It can read and return all elements that match the given condition. 
+
+
+
+Syntax:
+
+           collection.find(function(value){
+
+                return value_condition;
+
+           });                                                     // returns one value
+
+
+
+           collection.filter(function(value){
+
+                return value_condition;            // returns [ ] of values 
+
+           }) 
+
+
+
+Ex:
+
+<script>
+
+    
+
+    var sales = [56000, 42000, 67800, 40000, 58000, 64000];
+
+    sales.filter(function(value){
+
+         return value>=60000;
+
+    }).map(function(value){
+
+        document.write(value + "<br>");
+
+    })
+
+    
+
+</script>
+Class comments

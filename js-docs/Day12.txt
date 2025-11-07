@@ -4,6 +4,8 @@ Sudhakar Sharma (Sudhakar Sharma Naresh IT)
 6:47 PM
 Summary 
 
+Primitive Data Type
+
 - Number
 
 - String
@@ -78,7 +80,7 @@ Configuring Array:
 
                        a) Array meta character [ ]
 
-                       b) Array constructor       Array()
+                       b) Array constructor Array()
 
 
 

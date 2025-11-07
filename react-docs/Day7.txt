@@ -1,0 +1,232 @@
+https://www.instagram.com/sharmatechgroup/
+
+
+					JavaScript Module System 
+
+
+- Modular refers to part-by-part.
+- Modular approach allows to use application specific framework or library.
+- It includes only the required library for application.
+- It enables
+		a) Reusability
+		b) Extensibility
+		c) Maintainability 
+		d) Testability 
+- It makes application light weight and faster in interactions. 
+- To use modular approach in JavaScript it requires various module systems to setup for project. 
+		a) Common JS
+		b) UMD (Universal Module Distribution)
+		c) AMD (Asynchronous Module Distribution)
+		d) ESModule etc.
+- JavaScript in browser uses ESModule, which is the default for browser. 
+
+Module:
+ - JavaScript file is considered as a Module in JS library. 
+ 
+						home.js			//  home     - is module name
+
+ - Module can have a set of 
+		a) variables
+		b) functions
+		c) classes 
+
+ - Every member in a module is not accessible outside the module scope. 
+ - If you want to access any member outside module scope then you have to mark it as “export”.
+
+			export const  name = value;
+		
+			export function name() { }
+
+			export class name { }
+
+- You can import into any page and use in application
+
+			import   { name }   from   “moduleName”;      // ESModule System	
+			const  ref = require(“moduleName”);             // CJS, Require JS
+			ref.name;    
+
+- You can export any member after configuration by using “default”.
+
+		     const   Hello = function() {
+
+			 }
+			
+			export default Hello;
+	
+- Every module can have only one default export. 
+- Default member is imported without a “{ }” block.
+- It can’t be the last be import. 
+
+			import    defaultMember,  { others }  from   “moduleName”;
+
+Ex:
+1. src/home.js
+
+export const uname = "John";
+
+
+function Hello(){
+    return `Hello ! ${uname}`;
+}
+
+export class Demo
+{
+    Welcome(){
+        return `Welcome to JS Modules`;
+    }
+}
+export default Hello;
+
+
+2. Public/demo.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+         import Hello, { uname, Demo } from "../src/home.js";
+         let obj = new Demo();
+         document.querySelector("p").innerHTML = `${uname}<br> ${Hello()}<br>${obj.Welcome()}`;
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+
+
+	- You can import library from multiple modules. 
+
+			import   { A }   from  “module1”;
+			import   { B }  from   “module2”;
+
+	- You can import all members by using aliasing. 
+
+			import  * as  aliasName from  “module”;
+
+			aliasName.member;
+
+	 Note: Default member can’t be imported using aliasing.
+
+			import   defaultMember,  * as aliasName  from “module”;
+
+Ex:
+1. home.js
+export const uname = "John";
+
+
+function Hello(){
+    return `Hello ! ${uname}`;
+}
+
+export class Demo
+{
+    Welcome(){
+        return `Welcome to JS Modules`;
+    }
+}
+export default Hello;
+
+
+math.js
+
+
+
+export function Title(){
+    return `Math Title`;
+}
+
+export function Add(a, b){
+    return a +b;
+}
+
+export function Mul(a, b){
+    return a * b;
+}
+
+function Sub(a, b) {
+    return a - b;
+}
+export default Sub;
+
+demo.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+         import Sub, * as calculator from "../src/math.js";
+
+         document.querySelector("p").innerHTML = `Addition=${calculator.Add(30,40)}<br>Multiply=${calculator.Mul(3,5)}<br>Sub=${Sub(20,3)}`;
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+
+	 - If multiple modules have same name members then you have to import using “aliasing” technique. 
+
+				import    { A as  Module1A }   from “module1”;
+				import    { A as  Module2A }   from “module2”;
+
+Ex:
+1. home.js
+
+export function Title(){
+    return `Home Title`;
+}
+
+2. math.js
+
+
+export function Title(){
+    return `Math Title`;
+}
+
+
+3. demo.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+         import { Title as HomeTitle } from "../src/home.js";
+         import { Title as MathTitle } from "../src/math.js";
+
+         document.querySelector("p").innerHTML = `${HomeTitle()}<br>${MathTitle()}`;
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
+
+
+		.jsx
+		.css
+		.test.js / spec.js
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

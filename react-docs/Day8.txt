@@ -1,0 +1,278 @@
+Summary 
+- JavaScript modules
+- Module Systems
+		CJS, UMD, AMD etc.
+- export, default, import 
+- aliasing 
+
+Components in React Vite App:
+	- It is mandatory to keep all components in “src” folder.
+	- Every component can have 3 files 
+			a) .jsx [mandatory]
+			b) .css
+			c) .spec.js  (or) .test.js 
+	- JSX file comprises of presentation & logic.
+	- CSS file comprises of styles.
+	- spec / test files comprises of test methods for testing component functions & UI.
+
+			login.jsx
+			login.css
+			login.spec.js / login.test.js
+
+	 - Every component can be a function or class. 
+	 - Component name must start with an uppercase letter.
+	 - Component must return a JSX element as one fragment. 
+	 - JSX fragment can be any one of the following 
+
+				a) A semantic or non-semantic element of HTML
+							<header> <div> <main> <nav> etc..
+
+				b) An empty fragment without dynamic features
+
+							< >
+								… your content 
+							</>
+
+				c) React.Fragment
+
+							<React.Fragment>
+								… your content …
+							</React.Fragment>
+
+Syntax:
+				export function Register()
+				{
+				    return (
+							   <>
+								  <h2>Register</h2>
+							   </>
+							  )
+				}
+							  (or)
+	
+				function Register() 
+				{
+					return ( <> </> )
+				}
+				export default Register;
+
+							  (or)
+
+				const Register = ()=> ( <> </> );
+				export default Register;
+
+	- JSX element must have end token.
+	- JSX element will not allow attributes. You have to use properties. 
+	- Component styles are defined in a CSS file or configured inline. 
+	- Make sure that styles are not defined using “type selector”. 
+	  [ use type selector if you want element same across all components ]
+	- CSS files must be imported into component.
+		
+					import   “./register.css”;
+
+Enable Bootstrap for React vite App:
+	 - Install bootstrap for project
+
+			> npm install  bootstrap  bootstrap-icons --save
+
+	- Import bootstrap files into “main.jsx”
+
+		   import  ‘../node_modules/bootstrap/dist/css/bootstrap.css’ ;
+		   import  ‘../node_modules/bootstrap-icons/font/bootstrap-icons.css’;
+
+Note: You can install the extension for VS code 
+		“intelliSense for CSS class names in HTML”.
+
+	 - You can directly uses bootstrap and icon classes for elements
+
+			<li className=“bi bi-facebook”> </li>
+			<input type=“text” className=“form-control” />
+
+Ex:
+	components/register/register.css
+
+	
+.form-container {
+    border: 1px solid gray;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 2px 2px 2px black;
+}
+
+	component/register/register.jsx
+
+import React from "react";
+import './register.css';
+
+function Register()
+{
+    return (
+        <main className="d-flex justify-content-center mt-4">
+            <form className="form-container">
+                <h1 className="bi bi-person-circle"> Register</h1>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input type="text" className="form-control" /></dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" className="form-control" /></dd>
+                </dl>
+                <button className="btn btn-warning w-100">Login</button>
+            </form>
+        </main>
+    )
+}
+
+export default Register;
+
+	src/main.jsx
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
+
+import App from './App.jsx'
+import Login from './components/login/login.jsx'
+import Register from './components/register/register.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <Register />
+  </StrictMode>,
+)
+
+Ex: Netflix
+Netflix-index.css
+
+
+.bg-image {
+    background-image: url('Netflix-Background.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+.bg-shade {
+    background-color: rgba(0,0,0, 0.6);
+    height: 100vh;
+}
+
+
+Netflix-index.jsx
+
+import './netflix-index.css';
+import { NetflixHeader } from './netflix-header';
+import { NetflixSection } from './netflix-section';
+
+export function NetflixIndex(){
+     return(
+        <div className='bg-image'>
+            <div className='bg-shade'>
+                <NetflixHeader />
+                <NetflixSection />
+            </div>
+        </div>
+     )
+}
+
+Netflix-header.jsx
+
+
+
+export function NetflixHeader(){
+     return(
+        <header className="d-flex justify-content-between p-3 text-white">
+            <div>
+                <span className="fs-1 fw-bold text-danger">NETFLIX</span>
+            </div>
+            <div className="d-flex">
+               <div>
+                 <div className="input-group">
+                    <span className="bi input-group-text bi-translate"></span>
+                    <select className="form-select"> 
+                        <option>Language</option>
+                    </select>
+                </div>
+               </div>
+               <div>
+                 <button className="btn mx-3 btn-danger">Sign In</button>
+               </div>
+            </div>
+        </header>
+     )
+}
+
+Netflix-section.jsx
+
+import { NetflixRegister } from "./netflix-register";
+
+
+export function NetflixSection(){
+     return(
+        <section className="d-flex mt-5 justify-content-center text-white">
+            <div className="text-center">
+                <div className="fs-1 fw-bold">
+                Unlimited movies, shows,<br/> and more
+                </div>
+                <div className="fs-4">
+                    Starts at ₹149. Cancel at any time.
+                </div>
+                <main>
+                    <NetflixRegister />
+                </main>
+            </div>
+        </section>
+     )
+}
+
+
+Netflix-register.jsx
+
+
+
+export function NetflixRegister(){
+     return(
+        <form className="d-flex justify-content-center">
+            <div>
+                <div className="mt-5">
+                    Ready to watch? Enter your email to create or restart your membership.
+                </div>
+                <div className="input-group input-group-lg mt-3">
+                    <input type="email" className="form-control" />
+                    <button className="btn btn-danger"> Get Started <span className="bi bi-chevron-right"></span> </button>
+                </div>
+            </div>
+        </form>
+     )
+}
+
+
+
+
+												 React Data Binding
+ - Data binding is a technique of accessing data from source and bind to UI elements. It identifies the changes in UI and updates into source. 
+ - Data binding techniques are classified into 2 types
+		1. One Way Binding
+		2. Two Way Binding
+ - React implicitly supports One Way Binding. 
+ - It makes the data in UI elements read-only. 
+ - You can bind data using a data binding expression “{ }”.
+
+Syntax:
+			var user = “John”;
+
+			<p> Hello ! { user } </p>
+
+			<input type=“text”  value={user} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+

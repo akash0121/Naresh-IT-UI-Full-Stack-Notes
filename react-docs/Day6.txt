@@ -1,0 +1,107 @@
+Creating a new React Application using Vite Bundler 
+
+	> npm  create   vite@latest    app_name    -- -- template react 
+
+	> cd app_name
+
+	app_name > npm  install 
+
+React Application File System
+
+File / Folder					Description
+	
+node_modules	It comprises of all library files installed using npm.
+
+public			It comprises of static resources like html, images, docs etc.
+
+src	            It comprises of dynamic resources like css, js, scss, ts, jsx, etc.
+
+.gitignore		It configures the resources to ignore while publishing on to GIT.
+
+eslint.config.js	it is JavaScript language analysis tool.
+			        It configures JavaScript for React app.
+			        [ version, module system, production target location .. ]
+
+index.html		    It is the startup page for React app.
+
+package.json		It comprises of project meta data. [developer can modify]
+
+package.lock.json	It lock the package.json for re-producing libraries. 
+			        [auto generated - developer can’t edit]
+
+README.md		    It is a help document by developers for developers. 
+
+vite.config.js		It is bundler configuration. It is used to configure additional
+			        frameworks used in project. 
+			        [ server side framework, testing framework etc.]
+
+Run React Application Locally:
+
+> npm   run    dev 		              // for development environment
+
+> npm   run     build 	              // for production environment
+
+	Note: Application is hosted on local server at specific “port” number. 
+
+						http://localhost:5173
+		
+			  You can request the URL from any browser. 
+
+FAQ: What is this “npm run” used for?
+Ans:   It is used for executing batch programs. 
+
+FAQ: What is a batch program?
+Ans:   A sequence of operations or actions are defined under one reference name, so that
+		 you can execute in the same sequence every time just by using reference name. 
+		 
+		 Batch program is a reference name with sequence of operations.
+
+FAQ: How to create a batch job for your project?
+Ans:  By using “scripts” in package.json
+
+		 “scripts”: { 
+			  “bootstrap”:   “npm install bootstrap bootstrap-icons --save”,
+			  “shorthand”:  “complete list of actions to perform”
+		  }
+		
+			> npm run shorthand 
+			> npm run bootstrap
+
+	    You can terminate batch job using “ctrl + c” 
+
+  FAQ: How library works in browser?
+
+ 		
+
+React High Level Flow
+
+ 
+
+Javascript Module System
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
