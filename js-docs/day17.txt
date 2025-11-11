@@ -1,0 +1,580 @@
+JavaScript AJAX
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+JavaScript Ajax
+
+
+
+- Ajax is “Asynchronous JavaScript And XML”.
+
+- It enables partial post back.
+
+- It allows to submit and load new content into page without reloading the complete page. 
+
+- It improves the performance of page and renders content faster. 
+
+- Browser handles AJAX requests by using a browser window object “XMLHttpRequest”.
+
+
+
+
+
+1. Configure a reference for XMLHttpRequest object.
+
+
+
+       let http = new XMLHttpRequest();
+
+
+
+2. Configure the request handler. [by using open() method]
+
+
+
+       http.open(“method”, “url”, async:boolean);
+
+
+
+       method    : GET, POST, PUT, PATCH, DELETE etc.
+
+       async        : It uses a blocking technique when set to false, the default is false. 
+
+                         Set it to true in order use unblocking technique. 
+
+
+
+3. Send the request by using “send()” method
+
+
+
+       http.send();
+
+
+
+4. Execute the request by using “onreadystatechange” handler.
+
+
+
+       http.onreadystatechange = function() {
+
+
+
+
+
+       }
+
+
+
+       - Request is executed and completed in following phases 
+
+
+
+               1        initial
+
+               2        execute
+
+               3        complete 
+
+               4        ready 
+
+
+
+5.  Get the response data on ready state
+
+
+
+           if (http.readyState===4)          // response data is ready
+
+           {
+
+           }
+
+
+
+       - You can get response by using 
+
+
+
+               http.responseText
+
+               http.responseXML
+
+               http.responseHTML etc..
+
+
+
+Ex:
+
+ 1. Data/help.txt
+
+
+
+       … some text …
+
+
+
+2.  Js-examples/ajax.html
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+
+        pre {
+
+            background-color: black;
+
+            color:white;
+
+            padding: 20px;
+
+            height: 100px;
+
+            width: 80%;
+
+        }
+
+    </style>
+
+    <script>
+
+        function handleLoadClick(){
+
+
+
+             let http = new XMLHttpRequest();
+
+
+
+             http.open("get", "../data/help.txt", true);
+
+
+
+             http.send();
+
+
+
+             http.onreadystatechange = function(){
+
+
+
+                   if(http.readyState===4){
+
+                    
+
+                        document.querySelector("pre").textContent = http.responseText;
+
+
+
+                   }
+
+
+
+             }
+
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="handleLoadClick()">Load Help</button>
+
+    <br><br>
+
+    <div>
+
+        <pre>
+
+
+
+        </pre>
+
+    </div>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis id aut illum omnis animi, dolorem modi quae quis at. Quia ducimus dolore dolores excepturi nostrum doloremque, ullam modi neque accusantium. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum distinctio suscipit aperiam eum corrupti enim cum, rerum sint nesciunt inventore eveniet, dolor blanditiis earum. Quisquam, eos! Expedita eligendi praesentium consequuntur?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis id aut illum omnis animi, dolorem modi quae quis at. Quia ducimus dolore dolores excepturi nostrum doloremque, ullam modi neque accusantium. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum distinctio suscipit aperiam eum corrupti enim cum, rerum sint nesciunt inventore eveniet, dolor blanditiis earum. Quisquam, eos! Expedita eligendi praesentium consequuntur?</p>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis id aut illum omnis animi, dolorem modi quae quis at. Quia ducimus dolore dolores excepturi nostrum doloremque, ullam modi neque accusantium. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum distinctio suscipit aperiam eum corrupti enim cum, rerum sint nesciunt inventore eveniet, dolor blanditiis earum. Quisquam, eos! Expedita eligendi praesentium consequuntur?</p>
+
+</body>
+
+</html>
+
+
+
+Ex: JSON data
+
+1. Data/product.json
+
+
+
+{
+
+    "title": "Apple iPhone 16 (Pink, 266 GB)",
+
+    "price": 79900,
+
+    "rating": {"rate":4.9, "ratings":142456, "reviews":5324},
+
+    "image": "../public/images/iphone-pink.png",
+
+    "offers": [
+
+        "Bank Offer5% cashback on Axis Bank Flipkart Debit Card up to ₹750T&C",
+
+        "Bank Offer5% cashback on Flipkart SBI Credit Card upto ₹4,000 per calendar quarterT&C",
+
+        "Bank Offer5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarterT&C",
+
+        "Bank OfferUp To ₹50 Instant Cashback on BHIM Payments App. Min Order Value ₹199. Offer Valid Once Per UserT&C"
+
+    ]
+
+}
+
+
+
+2. Js-examples/product.html
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flipkart</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+
+        let product = {title:'', price:0, image:'', rating:{rate:0, ratings:0, reviews:0}, offers:[]};
+
+
+
+        function bodyload(){
+
+
+
+                let http = new XMLHttpRequest();
+
+                http.open("get", "../data/product.json", true);
+
+                http.send();
+
+                http.onreadystatechange = function(){
+
+                     if(http.readyState===4){
+
+                         product = JSON.parse(http.responseText);
+
+                         document.getElementById("imgProduct").src = product.image;
+
+                         document.getElementById("lblTitle").textContent = product.title;
+
+                         document.getElementById("lblRatings").innerHTML = `<span class="badge text-white bg-success p-2 rounded">${product.rating.rate} <span class="bi bi-star-fill"></span> </span> <span class="text-secondary fw-bold mx-2"> ${product.rating.ratings.toLocaleString('en-in')} ratings & ${product.rating.reviews.toLocaleString('en-in')} reviews </span>`;
+
+                         document.getElementById("lblPrice").textContent = product.price.toLocaleString('en-in', {style:"currency", currency:"INR", minimumFractionDigits:0});
+
+
+
+                         product.offers.map(function(offer){
+
+                             var li = document.createElement("li");
+
+                             li.className = "bi bi-tag-fill text-success my-3";
+
+                             li.innerHTML = `<span class="text-secondary"> ${offer} </span>`;
+
+                             document.getElementById("lstOffers").appendChild(li);
+
+                         })
+
+
+
+                     }
+
+                }
+
+
+
+        }
+
+    </script>
+
+</head>
+
+<body class="container-fluid" onload="bodyload()">
+
+    <div class="row mt-4">
+
+        <div class="col-3">
+
+            <img width="100%" id="imgProduct">
+
+        </div>
+
+        <div class="col-9">
+
+            <div id="lblTitle" class="fs-4"></div>
+
+            <div id="lblRatings" class="my-2">
+
+
+
+            </div>
+
+            <div class="my-2">
+
+                <span id="lblPrice" class="fs-1 fw-bold"></span>
+
+            </div>
+
+            <div class="my-2">
+
+                <div class="h5">Available Offers</div>
+
+                <ul class="list-unstyled" id="lstOffers">
+
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+Issues with XMLHttpRequest Object:
+
+   - It is synchronous implicitly, you have to make it asynchronous explicitly.
+
+   - It is slow as it uses various phases of handling request. 
+
+   - It returns response in Text & XML are primary formats.
+
+   - Other formats require explicit conversion. 
+
+   - Data conversion can be blocked by firewall. 
+
+   - CORS issues. [Cross Origin Resource Sharing]
+
+   - Security issues. [Data can be blocked]
+
+   - Not good in error handling. 
+
+
+
+                                               JavaScript Fetch API
+
+ - It is a JavaScript “promise”.
+
+ - Promise is asynchronous function. 
+
+ - It is implicitly asynchronous. 
+
+ - It is better is error handling when compared to fetch.
+
+ - Response is returned in binary format.
+
+ - Explicitly conversion is required. 
+
+ - It has CORS issues. 
+
+ - It has security issues. 
+
+ 
+
+Syntax:
+
+           fetch(“url”)
+
+           .then(function(response){ 
+
+                return response.json();
+
+           })
+
+           .then(function(data){ 
+
+               // use JSON data
+
+           })
+
+           .catch(function(error){
+
+               // report error
+
+           })
+
+           .finally(function(){
+
+               // executes always 
+
+           })
+
+
+
+
+
+           then()            executes on success
+
+           catch()            executes on error 
+
+           finally()            executes always 
+
+
+
+Ex:
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flipkart</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+
+        let product = {title:'', price:0, image:'', rating:{rate:0, ratings:0, reviews:0}, offers:[]};
+
+
+
+        function bodyload(){
+
+
+
+            fetch('../data/product.json')
+
+            .then(function(response){
+
+                return response.json();
+
+            })
+
+            .then(function(data){
+
+                product = data;
+
+                 document.getElementById("imgProduct").src = product.image;
+
+                document.getElementById("lblTitle").textContent = product.title;
+
+                document.getElementById("lblRatings").innerHTML = `<span class="badge text-white bg-success p-2 rounded">${product.rating.rate} <span class="bi bi-star-fill"></span> </span> <span class="text-secondary fw-bold mx-2"> ${product.rating.ratings.toLocaleString('en-in')} ratings & ${product.rating.reviews.toLocaleString('en-in')} reviews </span>`;
+
+                document.getElementById("lblPrice").textContent = product.price.toLocaleString('en-in', {style:"currency", currency:"INR", minimumFractionDigits:0});
+
+
+
+                product.offers.map(function(offer){
+
+                    var li = document.createElement("li");
+
+                    li.className = "bi bi-tag-fill text-success my-3";
+
+                    li.innerHTML = `<span class="text-secondary"> ${offer} </span>`;
+
+                    document.getElementById("lstOffers").appendChild(li);
+
+                })
+
+            })
+
+              
+
+        }
+
+    </script>
+
+</head>
+
+<body class="container-fluid" onload="bodyload()">
+
+    <div class="row mt-4">
+
+        <div class="col-3">
+
+            <img width="100%" id="imgProduct">
+
+        </div>
+
+        <div class="col-9">
+
+            <div id="lblTitle" class="fs-4"></div>
+
+            <div id="lblRatings" class="my-2">
+
+
+
+            </div>
+
+            <div class="my-2">
+
+                <span id="lblPrice" class="fs-1 fw-bold"></span>
+
+            </div>
+
+            <div class="my-2">
+
+                <div class="h5">Available Offers</div>
+
+                <ul class="list-unstyled" id="lstOffers">
+
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+Class comments

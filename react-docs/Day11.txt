@@ -1,0 +1,244 @@
+Array		[ ]
+Object		{ }
+Data [ { }, { } ]
+
+Map Type:
+	- Map is a key & value collection. 
+	- Key & value can be any type.
+	- All interactions are handled by implicit methods.
+	- It is faster in interactions when compared to object. 
+	- It is schema less [structure less].
+
+Syntax:
+			const [data]  =  useState(new Map());
+
+			data.set()
+			data.get()
+			data.delete()
+			data.clear()
+			data.has()
+			data.keys()
+			data.values()
+			data.entries() etc..
+
+Ex:	
+		data.set(key, value)
+		data.get(key)    
+
+Date Type
+	- Date & Time values are configured using “Date()” constructor. 
+	- Date & Time methods are same as in JS.
+
+			getHours()					setHours()
+			getMinutes()				setMinutes()
+			getSeconds()				setDate() etc..
+			getMilliSeconds()
+			getDay()
+			getDate()
+			getMonth()
+			getFullYear()
+			toDateString()
+			toTimeString()
+			toLocaleDateString()
+			toLocaleTimeString() etc.
+
+	- React uses 3rd party date libraries to manipulate date and time values. 
+	- The popular 3rd party date libraries for React
+			a) Moment
+			b) Dayjs 
+			c) Luxon 
+
+Setup Moment library for React App:
+		
+1. Install library
+
+			> npm  install   moment   --save 
+
+2. Import moment into component.
+
+		import   moment   from  “moment”;
+
+3. Configure date 
+		
+		const [departure] = useState(new Date());
+
+4. Display date using moment 
+
+		{ moment(departure).format(“date & time literals”) }
+
+		dd	d		short week day
+		dddd		long weekday 
+		DD		date number 
+		MM		month number
+		MMM	short month name
+		MMMM	long month name
+		YY		short year number
+		YYYY	long year number 
+
+Ex:
+		{ moment(departure).format(‘DD dddd, MMMM YYYY’) }
+
+ Note: Input date format must be always “year-month-day hrs:min:sec.milliSec”.
+
+Ex: data-binding.jsx
+
+import { useState, useEffect } from "react";
+import moment from "moment";
+
+export function DataBinding(){
+    
+   const [departure] = useState(new Date());
+   
+    useEffect(()=>{
+
+        
+        
+    },[]);
+
+
+    return(
+        <div className="container-fluid p-2">
+            <dl>
+                <dt>Departure</dt>
+                <dd>{moment(departure).format('dddd DD, MMMM YYYY')}</dd>
+            </dl>
+        </div>
+    )
+}
+				
+Regular Expression Type
+	- It is same as in JS.
+	- It is used to verify format of input value by using meta characters & quantifiers.
+	- It is enclosed in “/ /“.
+	- It is verified using string “match()” method. 
+
+Syntax:
+			const [mobile] = useState(“9876543210”);
+
+			{  (mobile.match(/+91\d{10}/) ? “Verified” : “Invalid” }
+
+Ex: data-binding.jsx
+
+import { useState, useEffect } from "react";
+import moment from "moment";
+
+export function DataBinding(){
+    
+    const [mobile, setMobile] = useState('')
+
+    useEffect(()=>{
+
+            setMobile(prompt('Enter mobile'));
+        
+        
+    },[]);
+
+
+    return(
+        <div className="container-fluid p-2">
+            
+            <p> { (mobile.match(/\+91\d{10}/)) ? "Mobile Verified": "Invalid Mobile" } </p>
+        </div>
+    )
+}
+
+Summary:
+- number 
+- string
+- boolean
+- null
+- undefined 
+- symbol
+- big int 
+- array
+- object
+- map
+- date
+- regular expression 
+
+												 Distributed Computing
+- Distributed computing allows communication between two applications running on two different machines. 
+- It also allows communication between two object in two different process of same machine. 
+
+Distributed technologies:
+
+		CORBA				Common Object Request Broken Architecture  [ 14 languages ]
+		DCOM				Distribute Component Object Model [Visual Basic]
+		RMI					Remote Method Invocation [J2EE]
+		Java Beans		Java
+		Remoting			.NET
+		Webservice 		All technologies [ C, Java, .NET, Php, Python etc..]
+
+Communication Specifications:
+
+		SOAP		[Service Oriented Architecture Protocol]
+		REST		[Representational State Transfer]
+		JSON		[JavaScript Object Notation]
+
+SOAP
+	- Service consumer sends XML request 
+	- Server provider sends XML response 
+
+	Request:
+				<Products>		
+					<Product>
+						<Category> Electronics </Category>
+					</Product>
+				</Products>
+
+	Response:
+				<Products>
+					<Product>
+						<Id> 4 </Id>
+						<Name>TV</Name>
+						<Category>Electronics</Category>
+					</Product>
+					 …
+				</Products>
+
+REST
+		- Consumer sends a query request. 
+		- Provider sends XML or JSON.
+
+	Request:
+			http://server.com/data/products?category=electronics
+			http://server.com/data/products/electronics 
+
+	Response
+			[
+				{  Id:4, Name:”TV”, Category:”Electronics” },
+				 ….
+			]
+
+JSON
+		- consumer sends JSON request.
+		- provider sends JSON response. 
+
+Issues with Web Service:
+		- It uses SOAP.
+		- It can be used only on Http or Https.
+		- It can run only on web server. 
+		- XML
+
+API
+	- Application Programming Interface
+	- It uses REST & JSON
+	- It can be used on any protocol.
+	- It can run on any server.
+	- It is available across all devices and OS services. 
+
+	eg: eBay [first api]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

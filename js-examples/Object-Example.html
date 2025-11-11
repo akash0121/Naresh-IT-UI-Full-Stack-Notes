@@ -1,0 +1,50 @@
+<script>
+
+
+    var product ={
+        Name: "Samsung TV",
+        Price: 34000,
+        Stock: true,
+        ShippedTo: ["Delhi","Hyd"],
+        Rating: {Rate:4.2,Count:500}
+    }
+
+    product.price = 60000;
+
+    document.write(`
+    Name=${product.Name} <br>
+    Price=${product.Price} <br>
+    Stock=${product.Stock} <br>
+    ShippedTo=${product.ShippedTo} <br>
+    Rating=${product.Rating.Rate} <br>
+    `)
+
+    document.write("Object Manipulation<br>");
+
+    for(var key in product){
+        document.write(`Key=${key}<br>`)
+    }
+
+    delete product.Rating;
+
+    Object.keys(product).map(function(key){
+        document.write(`key= ${key} <br>`)
+    })
+
+    var data = {
+
+        User : {Name: "John", Age: 22, Course: "UI"},
+
+        Product: {Id:1, Name:"TV", Price: 23000}
+
+     }
+
+     var { User, Product } = data;
+
+     console.log(User);
+     console.log(Product);
+
+
+
+
+</script>

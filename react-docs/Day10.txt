@@ -1,0 +1,201 @@
+Data Binding
+useState()
+useEffect()
+Handle Various Data Types
+- Number
+		toFixed()
+		toPrecision()
+		toLocaleString()
+- String
+		- String formatting
+		- String configuration
+		- String manipulation
+		
+Boolean Type:
+		- Boolean type handles “true” & “false”.
+		- React can use boolean value but can’t display the boolean value. 
+		- You have to render conditional data using boolean. 
+		
+Note: JSX will not allow any statements inside JSX element. 
+		 
+		- You have to handle all actions on boolean by using operators or methods. 
+
+Syntax:
+			const [stock, setStock] = useState(true);
+
+			<p> { (stock===true) ? “true” : “false” } </p>
+
+Undefined Type
+		- It is same as in JS.
+		- It is configured and verified using “undefined” keyword. 
+		- React can’t display “undefined” keyword. It can use undefined. 
+
+Syntax:
+			const [ price, setPrice ] = useState();
+
+			<p>  { (price) ? price : “Price not defined”  } </p>
+
+Null Type
+		- It is used to define values at runtime. 
+		- If a value is not provided into reference at runtime then it uses “null”. 
+		- React can’t display null, but can use null as keyword.
+
+Syntax:
+			const [ price, setPrice ] = useState();
+
+			setPrice(prompt(“Enter Price”));
+
+			<p> { (price===null) ? “Price Required”: price } </p>
+
+Symbol Type 
+		- It is same as in JS.	
+		- It is used to hide a key in object. 
+
+Syntax:
+			var Id = Symbol();
+
+			var product = { 
+				[Id] : 1,
+				Name: “TV”
+			 }
+
+			product[Id];        // to access individually. 
+
+Array Type
+		- All array rules same as in JS.
+		- Array configuration.
+		- Array Elements.
+		- Array Methods.
+		- Array de-structure is same as in JS.
+		- Array spread approach is same. 
+Ex: data-binding.jsx
+
+import { useState, useEffect } from "react";
+
+export function DataBinding(){
+    
+    const [electronics] = useState(["TV", "Mobile"]);
+    const [fashion] = useState(["Kids Fashion", "Women Fashion"]);
+    const [categories, setCategories] = useState([]);
+   
+    useEffect(()=>{
+
+        setCategories([...electronics, ...fashion]);
+        console.log(categories);
+        
+    },[]);
+
+
+    return(
+        <div className="container-fluid p-2">
+            <p> {categories} </p>
+        </div>
+    )
+}
+
+
+	- Array presentation in React requires “map()” method as iterator to read all elements and generate UI element for items list. 
+	- Every child item in list must have a unique “key” reference. 
+
+Syntax:
+			<ul>
+				{
+				   collection.map( (value, index) => <li key={index}> { value } </li> )
+				}
+			</ul>
+
+Ex: data-binding.jsx
+
+import { useState, useEffect } from "react";
+
+export function DataBinding(){
+    
+    const [categories] = useState(['Home', 'Electronics', 'Fashion', 'Footwear']);
+   
+    useEffect(()=>{
+
+        
+        
+    },[]);
+
+
+    return(
+        <div className="container-fluid p-2">
+            <header className="d-flex align-items-center p-2 border border-1 border-primary justify-content-between">
+                <div className="fw-bold">Amazon</div>
+                <nav>
+                    {
+                       categories.map(category => <span className="mx-2" key={category}><a className="text-decoration-none" href="#">{category}</a></span>)
+                    }
+                </nav>
+                <div>
+                    <button className="btn btn-danger bi bi-person-fill"> Sign In </button>
+                </div>
+            </header>
+             <ol>
+                {
+                     categories.map((category, index)=><li key={index}>{category}</li>)
+                }
+             </ol>
+             <select>
+                {
+                    categories.map((category, index)=><option key={index}>{category}</option>)
+                }
+             </select>
+             <ul className="list-unstyled">
+                {
+                    categories.map(category=><li key={category}> <input type="checkbox" value={category} /> <label> {category} </label> </li>)
+                }
+             </ul>
+        </div>
+    )
+}
+
+
+
+Object Type
+		- Object configuration with key & value is same as in JS.
+		- Object manipulation is also same.
+
+Syntax:
+			cont  [product] = useState( { key:value, key:value } );
+
+		- Reading all keys from object
+			a) for..in
+			b) Object.keys()
+		
+		- Delete a key from object
+			a) delete operator
+
+		- Hide a key in object
+			a) symbol data type
+
+		- Verify keys
+			a) “in” operator
+
+Syntax:
+			const [product] = useState( { Id:1, Name:”TV”, ShippedTo:[“Delhi”, “Hyd”], Rating: { Rate: 4.5, Count:3500 } });
+
+
+			<p> { product.Name } </p>
+			<p> { product.Rating.Rate } </p>
+
+			{
+			  product.ShippedTo.map(item=> <div key={item}> {item} </div>)
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

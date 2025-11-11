@@ -1,0 +1,21 @@
+ExpressJS is a nodejs web applicaation framework that provides a cleaner and simple way to write nodejs. it also provides tools and features to build fast web servers and API's easily
+why ExpressJS?
+  ExpressJS is the standard framework for nodejs because
+  i. simplicity: ExpressJS provides simple functions for routing and middleware instead of manually using nodejs http module
+  ii. Fast:it is built directly based on nodejs core modules so its fast
+  iii. middleware: using express , we can add extra middle functionalities like authentication , logging etc.., easily
+  iv. express is unopiniated means we can work as any folder structure and with any database
+  v.community: it contains tons of modules and lot of community.
+
+  How ExpressJS Works?
+
+   When client requests, express passes the request through some functionalities(middleware), then it will go to particular route and based on logic, it will send response. if it dowsn't send any response, then automatically it calls next() to pass the request to next middleware
+
+create basic API server using express js
+
+
+
+
+
+
+

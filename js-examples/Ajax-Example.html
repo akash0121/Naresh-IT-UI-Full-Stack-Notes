@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Example Of the java script</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        // const http = new XMLHttpRequest();
+        // http.open("get", "../Data/data.json", true);
+        // http.send();
+
+        // http.onreadystatechange = function () {
+        //     if (http.readyState === 4) {
+        //         console.log(http.responseText);
+        //     }
+        // }
+
+        // const http = new XMLHttpRequest();
+        // http.open("get", "../Data/data.json", true);
+        // http.send();
+        // http.onreadystatechange = function () {
+        //     if (http.readyState === 4) {
+        //         const product = JSON.parse(http.responseText)
+        //         console.log(product)
+        //         document.querySelector("img").src = product.image;
+        //         document.getElementById("product-title").textContent = product.name;
+        //     }
+        // }
+
+        function bodyload(){
+
+
+        fetch("../Data/data.json")
+        .then(function(respnose){
+                return respnose.json();
+        })
+        .then(function(data){
+                const product = data;
+                console.log(product)
+                document.querySelector("img").src = product.image;
+                document.getElementById("product-title").textContent = product.name;
+                document.getElementById("rating").innerHTML = `<span>${product.rating.rating}<sapn> ${product.rating.ratings} <span>${product.rating.reviwes}<span>`
+                document.getElementById("product-price").textContent = product.price;
+
+                product.offers.map(function(offer){
+                    var li = document.createElement("li")
+                    
+                    li.className = "bi bi-tag-fill text-success my-3"
+                    li.innerHTML = `<span class="text-secondary"> ${offer} </span>`;
+                    document.getElementById("product-offers").appendChild(li);
+                })
+
+        })
+    }
+
+    </script>
+</head>
+
+<body onload="bodyload()">
+    <div class="d-flex">
+        <div>
+            <img width="200px" id="image"></img>
+        </div>
+        <div>
+            <h3 id="product-title"></h3>
+            <div id="rating">
+                
+            </div>
+            <div id="product-price"></div>
+            <h5>Bank Offer</h5>
+            <ul id="product-offers">
+                
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

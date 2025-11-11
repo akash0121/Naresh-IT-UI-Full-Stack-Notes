@@ -1,0 +1,193 @@
+Note: Variables are not recommended to handle data in a component. 
+		  They are immutable, and component requires mutable reference. 
+
+State in Component:
+	- Web applications use “http / https” as protocols. 
+	- They are stateless protocols. 
+	- They can’t remember data between requests. 
+	- Hence various state management techniques are required to handle data for component.
+
+Local State:
+	- A React component comprises of various phases 
+
+			create component => mount component => update component => unmount
+
+	- A local state is configured for component while creating the component.
+	- Local state can handle any type of data
+			a) Primitive 
+			b) Non Primitive 
+	- You can access the local state by using a React Hook “useState()”.
+	- Hook is a service that provides pre-defined functionality, which you customize and implement according to the requirements.
+	- Technically hook is function.
+	- useState() hook returns 2 references 
+			a) getter		for reading and returning value
+			b) setter		for assigning a new value 
+
+Syntax:
+				const [ getter, setter ] = useState(value);
+				const  [ user, setUser ] = useState(‘John’);
+				const  [ stock, setStock] = useState(true);
+				const  [ products, setProducts] = useState([ ’TV’, ‘Mobile’ ]);
+
+	FAQ’s:
+		1. Can we use var or let keywords for configuring useState()?
+		A. Yes. But not recommended.
+
+		2. Why var & let not recommended for state?
+		A. State requires initialization. It should not allow declaring & assignment.
+			“var & let” can skip initialization. Hence they are not recommended.
+
+		3. How you can assign a new value using setter if state is configured with const?
+		A. By re-initilizing memory for const you set a new value. 
+
+		Syntax:
+					const [user, setUser] = useState( “John”);
+					
+					setUser = “David”;       // invalid
+					setUser(“David”);        //  valid 
+
+	  - You can’t set state while creating a component. 
+	  - State allows to set value on mount or on update. 
+	  - Component mount and unmount can be configured by using the hook “useEffect()”.
+
+Syntax:
+			 useEffect( ()=> { }, [ dependencies ] )
+
+	  - Component mounts only once. 	  - If you want a component to remount then, you have to configure the dependencies. 
+	  - So that component can remount whenever dependency changes. 
+
+Ex:  data-binding.jsx
+
+import { useState, useEffect } from "react";
+
+export function DataBinding(){
+    
+    const [user, setUser] =  useState('John');
+    const [age, setAge] = useState(0);
+    
+    useEffect(()=>{
+
+            setUser('David');
+            setAge(22);
+
+    },[]);
+
+
+    return(
+        <div className="container-fluid p-2">
+            <p>Hello ! {user}  </p>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" value={user} /></dd>
+                <dt>Age</dt>
+                <dd><input type="number" value={age} /></dd>
+            </dl>
+        </div>
+    )
+}
+
+Handle Various Data Types in React:
+
+1. Number
+		- A number can be any one of the following
+				Signed Integer
+				Unsigned Integer
+				Float
+				Double 
+				Decimal
+				Exponent
+				Binary
+				Hexadecimal
+				Octa
+				Big Int       [ 99838821n ]
+		- Number methods are same as in JS.
+				toFixed()
+				toPrecision()
+				toLocaleString()
+		- Parsing is same
+				parseInt()
+				parseFloat()
+		- Verifying Number is same 
+				isNaN()
+
+Ex: data-binding.jsx
+
+import { useState, useEffect } from "react";
+
+export function DataBinding(){
+    
+    const [price, setPrice] = useState(0);
+    const [views, setViews] = useState(0);
+    
+    useEffect(()=>{
+
+            setPrice(560000.00);
+            setViews(3569900);
+          
+    },[]);
+
+
+    return(
+        <div className="container-fluid p-2">
+             <p> Price : {price.toLocaleString('en-in', { style:"currency", currency:"INR" })} </p>
+             <p> Views : {views.toLocaleString('en-us', { notation:"compact" })} </p>
+        </div>
+    )
+}
+
+
+2. String
+		- String is defined using 3 techniques
+			a) double quote “ ”
+			b) single quote ‘ ’
+			c) backtick ``
+		- Backtick allows embedded expression using JS binding method “${ }”
+
+				{ }				react binding 
+				${ }			JS binding 
+		
+		- All string methods are same as in JS.
+
+Ex: data-binding 
+
+import { useState, useEffect } from "react";
+
+export function DataBinding(){
+    
+    const [buttonWidth, setButtonWidth] = useState('w-25');
+    const [title, setTitle] = useState('');
+   
+    useEffect(()=>{
+
+          setButtonWidth('w-100');
+          setTitle('Data Binding in React');
+          
+    },[]);
+
+
+    return(
+        <div className="container-fluid p-2">
+            <h1>{title.toUpperCase()}</h1>
+            <button className={`btn btn-primary ${buttonWidth}`}>Submit</button>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

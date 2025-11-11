@@ -1,0 +1,574 @@
+Object Type
+Sudhakar Sharma (Sudhakar Sharma Naresh IT)
+•
+Yesterday
+2. Object Type
+
+       - Object is used to keep all relative data and logic together. 
+
+       - “Alan Kay” introduced the concept of object in to computer programming. 
+
+       - It enables easy
+
+               a) reusability 
+
+               b) extensibility 
+
+               c) separation 
+
+               d) maintainability &
+
+               e) testability 
+
+       - Object is a Key & Value collection. 
+
+
+
+Syntax:
+
+           let  product = { 
+
+                  key : value, 
+
+                  key : value
+
+           }
+
+
+
+       - Key is string type and value can be any type. 
+
+       - You can access the keys with in object by using “this” keyword, and outside object by using the object reference name.
+
+       - If object represents only data then it is considered as JSON type. 
+
+       - JSON is JavaScript Object Notation. 
+
+       - JSON format of data have following features:
+
+               * It is light weight.
+
+               * It is easy to transfer in network.
+
+               * It is cross platform, can run on any device or any OS.
+
+               * It can handle data offline. 
+
+               * It is not infected by Virus. 
+
+               * It can be transported without converting the data. 
+
+Ex:
+
+<script>
+
+     var product = {
+
+           Name : "Samsung TV",
+
+           Price: 34000,
+
+           Stock: true,
+
+           ShippedTo: ["Delhi", "Hyd"],
+
+           Rating: {Rate:4.2, Count: 500}
+
+     }
+
+     product.Price = 60000;
+
+     document.write(`
+
+        Name=${product.Name}<br>
+
+        Price=${product.Price} <br>
+
+        Stock=${product.Stock} <br>
+
+        Cities=${product.ShippedTo.join(' / ')}<br>
+
+        Rating=${product.Rating.Rate}[${product.Rating.Count}]
+
+     `)
+
+</script>
+
+
+
+       - Object can have both data and logic.
+
+       - Logic is defined as function. 
+
+       - Functions are used to define actions for object. 
+
+
+
+Syntax:
+
+           let object = {
+
+               key : value,
+
+               key : function() { }
+
+           }
+
+
+
+Ex:
+
+<script>
+
+     var product = {
+
+          Name: "",
+
+          Price: 0,
+
+          Qty:1,
+
+          Total: function(){
+
+             return this.Qty * this.Price
+
+          },
+
+          Print: function(){
+
+             document.write(`Name=${this.Name}<br>Price=${this.Price}<br>Qty=${this.Qty}<br>Total=${this.Total()}`);
+
+          }
+
+     }
+
+     product.Name = "Samsung TV";
+
+     product.Price = 35000;
+
+     product.Qty = 2;
+
+     product.Print();
+
+     document.write("<hr>");
+
+     product.Name = "Mobile";
+
+     product.Price = 12000;
+
+     product.Qty = 3;
+
+     product.Print();
+
+</script>
+
+
+
+Object Manipulations:
+
+   
+
+1. Reading all keys from object
+
+       
+
+       a) for..in
+
+       b) Object.keys() 
+
+
+
+ Syntax:
+
+           for(var key in object)
+
+           {
+
+           }
+
+           
+
+           Object.keys(objectName).map(function(key){
+
+
+
+           })
+
+Ex:
+
+<script>
+
+    var product = {
+
+        Name : "TV",
+
+        Price: 34000,
+
+        Rating: 4.3,
+
+        Stock: true
+
+    }
+
+    for(var key in product)
+
+    {
+
+        document.write(key + "<br>");
+
+    }
+
+    Object.keys(product).map(function(key){
+
+         document.write(`<li>${key}: ${product[key]}</li>`);
+
+    })
+
+</script>
+
+
+
+       
+
+2. Deleting Keys
+
+       - You can delete any key from object by using “delete” operator. 
+
+       - You can’t delete keys of built-in objects.
+
+
+
+Syntax:
+
+           delete  objectName.key;
+
+
+
+           delete  string.length;        // invalid 
+
+
+
+Ex:        
+
+           delete  product.Rating; 
+
+
+
+Ex:
+
+<script>
+
+    var product = {
+
+        Name : "TV",
+
+        Price: 34000,
+
+        Rating: 4.3,
+
+        Stock: true
+
+    }
+
+    for(var key in product)
+
+    {
+
+        document.write(key + "<br>");
+
+    }
+
+
+
+    delete product.Rating;
+
+
+
+    Object.keys(product).map(function(key){
+
+         document.write(`<li>${key}: ${product[key]}</li>`);
+
+    })
+
+</script>
+
+
+
+
+
+3. Hiding Keys 
+
+       - Hiding any field in UI requires <input> with type “hidden”. 
+
+       - It will not display the value in UI but uses in background to submit. 
+
+
+
+Ex: Form Input
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <form>
+
+        <h3>Edit Product</h3>
+
+        <dl>
+
+            <dt>
+
+                <input type="hidden" value="1" name="Id">
+
+            </dt>
+
+            <dt>Name</dt>
+
+            <dd><input type="text" value="TV" name="Name"></dd>
+
+            <dt>Price</dt>
+
+            <dd><input type="text" value="34000" name="Price"></dd>
+
+        </dl>
+
+        <button>Submit</button>
+
+    </form>
+
+</body>
+
+</html>
+
+
+
+       - JavaScript object can hide the keys by using “Symbol” data type.
+
+       - Symbol is a primitive type. 
+
+
+
+Syntax:    
+
+       var key = Symbol();
+
+
+
+       var object = { 
+
+           [key] : value,        // symbol - hidden key
+
+           key: value
+
+       }
+
+       console.log(object[key]);
+
+
+
+Ex:
+
+<script>
+
+     var Id = Symbol();
+
+
+
+     var product = {
+
+        [Id]: 1,
+
+        Name: "TV",
+
+        Price: 34000
+
+     }
+
+
+
+     Object.keys(product).map(function(key){
+
+         document.write(`${key}: ${product[key]} <br>`);
+
+     })
+
+
+
+     document.write(`Id=${product[Id]}`);
+
+</script>
+
+
+
+
+
+4. Finding Key
+
+       - You can find keys by using “in” operator. 
+
+       - It returns true if the key is inside specified object.
+
+
+
+Syntax:
+
+           ( “key”  in   object ) ? True : False 
+
+
+
+Ex:
+
+<script>
+
+     var Id = Symbol();
+
+
+
+     var product = {
+
+        [Id]: 1,
+
+        Name: "TV",
+
+        Price: 34000,
+
+        
+
+     }
+
+
+
+     Object.keys(product).map(function(key){
+
+         document.write(`${key}: ${product[key]} <br>`);
+
+     })
+
+
+
+     document.write(`Id=${product[Id]}<br>`);
+
+     document.write(("Rating" in product)?`Rating=${product.Rating}`:'Rating Not Available');
+
+</script>
+
+
+
+5. Object de-structure 
+
+   
+
+       - JavaScript ES6+ version supports object de-structure. 
+
+       - It allows to separate the keys from object and store into individual references.
+
+
+
+Syntax:
+
+       var obj = { key1: value, key2: value }
+
+   
+
+       var {ref1, ref2 } = obj;        ref1=key1_value, ref2=key2_value
+
+
+
+
+
+Ex:
+
+<script>
+
+     var product = {
+
+        Name : "Samsung TV",
+
+        Price: 45000
+
+     }
+
+
+
+     var {Name, Price} = product;
+
+     console.log(Name);
+
+     console.log(Price);
+
+</script>
+
+
+
+Ex:
+
+<script>
+
+     var data = {
+
+        User : {Name: "John", Age: 22, Course: "UI"},
+
+        Product: {Id:1, Name:"TV", Price: 23000}
+
+     }
+
+     
+
+     var {User, Product} = data;
+
+
+
+     console.log(User);
+
+     console.log(Product);
+
+</script>
+
+
+
+Note: The references configured for de-structure must match with the keys in object.
+
+
+
+Ex:
+
+<script>
+
+     var data = {
+
+        User : {Name: "John", Age: 22, Course: "UI"},
+
+        Product: {Id:1, Name:"TV", Price: 23000}
+
+     }
+
+     
+
+     var {User, Product} = data;
+
+
+
+     Object.keys(User).map(function(key){
+
+        document.write(`${key}: ${User[key]}<br>`);
+
+     })
+
+</script>
+
+
+
+                                               JavaScript Ajax
+Class comments
